@@ -1,0 +1,14 @@
+import { chromium } from 'file:///C:/Users/%E5%BC%A0%E4%B8%80/WorkBuddy/spaces/2026_11_12_22-57-34/attribution/node_modules/playwright-core/index.mjs';
+import path from 'node:path';
+import url from 'node:url';
+const here = path.dirname(url.fileURLToPath(import.meta.url));
+const page_url = url.pathToFileURL(path.join(here, '..', 'site', 'index.html')).href;
+const browser = await chromium.launch({ executablePath: 'C:/Users/张一/AppData/Local/Google/Chrome/Application/chrome.exe', args: ['--no-sandbox'] });
+const page = await browser.newPage({ viewport: { width: 1280, height: 900 }, deviceScaleFactor: 2 });
+await page.goto(page_url, { waitUntil: 'load' });
+const table = await page.$('table');
+await table.scrollIntoViewIfNeeded();
+await table.screenshot({ path: path.join(here, '..', 'out', 'shot-table.png') });
+await page.close();
+await browser.close();
+console.log('wrote shot-table.png');

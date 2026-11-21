@@ -63,12 +63,14 @@ PROBLEMS = {
 }
 
 PROSE = {
-    "conclusion": "六題都跑得出可行解；一題撞在 60 秒上。",
+    "conclusion": "36 個實例裡 34 個拿到可行解；集合劃分有 2 個實例在 60 秒內找不到覆蓋。",
     "lede": "六個沒見過的運籌題，同一條生產線：讀 schema、選構造、自己判可行、自己決定什麼時候停。"
             "判分用官方檢查器。",
-    "ruler_note": "橫條是實際牆鐘，紅線是 60 秒。條愈長不代表愈好，撞到紅線就是 0 分。",
-    "score_note": "分數＝參考目標 ÷ 我們算出的目標（最小化題）。等於參考是 1.000，比參考好可以到 2.000。"
-                  "這裡的參考值是<b>基準資料集</b>裡的 Gurobi 目標，不是比賽後台的凍結值，所以它是估計，不是成績。",
+    "ruler_note": "橫條＝那一題最慢一次的牆鐘；深色虛線是我們自設的 55 秒停止點（留 5 秒寫答案）；"
+                  "紅條＝這一題有實例沒解出來。條長不代表解好壞，右邊那列才是平均分。",
+    "score_note": "分數照官方評分頁算：最小化題是「參考 ÷ 我們」，最大化題（本場的定向越野）反過來；"
+                  "與參考相同得 1.000，比參考好最多到 2.000。這裡的參考值是<b>基準資料集</b>裡的 Gurobi 目標，"
+                  "不是比賽後台凍結的參考值，所以它是估計，不是成績。",
 }
 
 
@@ -102,48 +104,74 @@ def build() -> str:
 
     # ---- the 60 s ruler
     bar_h, gap, left, width = 18, 10, 150, 480
-    ruler = [f'<svg viewBox="0 0 {left + width + 92} {len(order) * (bar_h + gap) + 40}" '
-             f'role="img" aria-label="每題最慢一次實例的牆鐘，紅線是 60 秒">']
-    ruler.append(f'<line x1="{left + width}" y1="0" x2="{left + width}" y2="{len(order)*(bar_h+gap)+8}" '
-                 f'stroke="#b3271e" stroke-width="2"/>')
-    ruler.append(f'<text x="{left + width}" y="{len(order)*(bar_h+gap)+26}" text-anchor="middle" '
-                 f'font-size="14" fill="#b3271e">60 s</text>')
+    top = 20
+    total_h = top + len(order) * (bar_h + gap) + 34
+    ruler = [f'<svg viewBox="0 0 {left + width + 76} {total_h}" '
+             f'role="img" aria-label="每題最慢一次實例的牆鐘，虛線是自設的 55 秒停止點">']
+    stop = left + width * (55.0 / 60.0)
+    ruler.append(f'<line x1="{left + width}" y1="{top - 8}" x2="{left + width}" '
+                 f'y2="{top + len(order)*(bar_h+gap) + 4}" stroke="#b8b2a3" stroke-width="2"/>')
+    ruler.append(f'<line x1="{stop}" y1="{top - 8}" x2="{stop}" y2="{top + len(order)*(bar_h+gap) + 4}" '
+                 f'stroke="#3a3730" stroke-width="1.5" stroke-dasharray="4 4"/>')
+    ruler.append(f'<text x="{left + width}" y="{top + len(order)*(bar_h+gap)+20}" text-anchor="middle" '
+                 f'font-size="13" fill="#6b6659">60 s</text>')
+    ruler.append(f'<text x="{stop}" y="{top + len(order)*(bar_h+gap)+20}" text-anchor="middle" '
+                 f'font-size="12" fill="#3a3730">55 s</text>')
+    ruler.append(f'<text x="{left + width + 16}" y="{top - 8}" font-size="11" fill="#6b6659" '
+                 f'text-anchor="end">慢</text>')
+    ruler.append(f'<text x="{left + width + 62}" y="{top - 8}" font-size="11" fill="#6b6659" '
+                 f'text-anchor="end">平均分</text>')
 
     for i, slug in enumerate(order):
-        y = i * (bar_h + gap) + 6
+        y = top + i * (bar_h + gap)
         slowest = max((r["wall_s"] for r in rows if r["slug"] == slug), default=0.0)
         length = min(1.0, slowest / 60.0) * width
         score = problems[slug]["mean_score"]
-        colour = "#1f5d4c" if score >= 1.0 else ("#b3271e" if problems[slug]["feasible"] < problems[slug]["instances"] else "#3a3730")
+        incomplete = problems[slug]["feasible"] < problems[slug]["instances"]
+        colour = "#b3271e" if incomplete else "#3a3730"
         ruler.append(f'<text x="{left - 12}" y="{y + bar_h - 4}" text-anchor="end" font-size="15" fill="#16150f">'
                      f'{esc(PROBLEMS[slug]["short"])}</text>')
         ruler.append(f'<rect x="{left}" y="{y}" width="{width}" height="{bar_h}" fill="#eae5d8" rx="3"/>')
         ruler.append(f'<rect x="{left}" y="{y}" width="{max(2, length):.1f}" height="{bar_h}" fill="{colour}" rx="3"/>')
-        ruler.append(f'<text x="{left + 10}" y="{y + bar_h - 5}" font-size="13" fill="#f7f5f0">'
-                     f'{slowest:.0f}s</text>' if slowest > 6 else "")
-        ruler.append(f'<text x="{left + width + 14}" y="{y + bar_h - 5}" font-size="14" fill="#3a3730">'
-                     f'{score:.2f}</text>')
+        ruler.append(f'<text x="{left + width + 16}" y="{y + bar_h - 4}" font-size="13" fill="#6b6659" '
+                     f'text-anchor="end">{slowest:.1f}s</text>')
+        ruler.append(f'<text x="{left + width + 62}" y="{y + bar_h - 4}" font-size="13" fill="#16150f" '
+                     f'text-anchor="end">{score:.2f}</text>')
     ruler.append("</svg>")
     ruler_svg = "".join(ruler)
 
     # ---- table
     table_rows = []
     for slug in order:
+        p = problems[slug]
+        table_rows.append(
+            f'<tr class="group"><td colspan="5"><b>{esc(PROBLEMS[slug]["short"])}</b> '
+            f'<span class="slug mono">{esc(slug)}</span> — {p["feasible"]}/{p["instances"]} 可行，'
+            f'平均 {p["mean_score"]:.3f}</td></tr>'
+        )
         for r in [x for x in rows if x["slug"] == slug]:
             bad = not r["feasible"]
             cls = ' class="bad"' if bad else ""
-            note = "—"
             if bad:
-                note = "檢查器判不可行（沒有可行覆蓋）" if r["objective"] in (None, 0) else "檢查器判不可行"
-            elif r["score"] >= 1.0:
-                note = "優於參考"
-            elif r["score"] >= 0.9:
-                note = "接近參考"
+                note = "沒有解出來（記 0）"
+            else:
+                delta = (r["objective"] - r["reference_objective"]) / r["reference_objective"] * 100.0
+                if r["direction"] == "maximize":
+                    delta = -delta
+                ratio = (r["reference_objective"] / r["objective"]) if r["direction"] == "minimize" else (r["objective"] / r["reference_objective"])
+                if abs(delta) < 0.05:
+                    note = "與參考相同"
+                elif delta < 0:
+                    note = f"比參考好 {abs(delta):.1f}%"
+                elif delta > 100:
+                    note = f"是參考的 {ratio:.1f} 倍差"
+                else:
+                    note = f"比參考差 {delta:.1f}%"
             table_rows.append(
-                f'<tr{cls}><td>{esc(PROBLEMS[slug]["short"])}</td><td class="mono">{esc(r["instance"])}</td>'
+                f'<tr{cls}><td class="mono">{esc(r["instance"])}</td>'
                 f'<td>{"可行" if r["feasible"] else "不可行"}</td>'
                 f'<td class="num">{fmt(r["score"])}</td>'
-                f'<td class="num">{r["wall_s"]:.2f}s</td><td>{note}</td></tr>'
+                f'<td class="num">{r["wall_s"]:.1f}</td><td>{note}</td></tr>'
             )
 
     # ---- per problem cards
@@ -169,7 +197,9 @@ def build() -> str:
       </article>""")
 
     failed_lines = "".join(
-        f'<li><code>{esc(r["slug"])}</code> / <code>{esc(r["instance"])}</code>：{esc((r["violations"] or ["不可行"])[0])[:160]}</li>'
+        f'<li><code>{esc(r["slug"])}</code> / <code>{esc(r["instance"])}</code>：'
+        f'60 秒內沒有找到覆蓋，solver 寫出空清單，檢查器因此判「缺少必要欄位」——'
+        f'是<b>沒解出來</b>，不是輸出格式壞了。</li>'
         for r in failed
     ) or "<li>沒有。</li>"
 
@@ -210,6 +240,8 @@ def build() -> str:
   td {{ padding: 10px 10px; border-bottom: 1px solid #eee8db; vertical-align: top; }}
   td.num, th.num {{ text-align: right; font-variant-numeric: tabular-nums; }}
   .mono, code {{ font-family: ui-monospace, SFMono-Regular, "Cascadia Mono", Menlo, monospace; }}
+  tr.group td {{ background: #f2eee3; font-size: 14px; padding-top: 12px; padding-bottom: 8px; }}
+  tr.group .slug {{ color: var(--muted); font-size: 12px; }}
   tr.bad td {{ background: #fbf0ee; }}
   tr.bad td:first-child {{ box-shadow: inset 3px 0 0 var(--red); }}
   .cards {{ display: grid; gap: 20px; }}
@@ -226,6 +258,7 @@ def build() -> str:
   .mini {{ display: flex; gap: 28px; margin: 6px 0 12px; padding-top: 12px; border-top: 1px solid #efe9dc; }}
   .mini div {{ display: flex; gap: 8px; align-items: baseline; }}
   .mini dt {{ font-size: 13px; color: var(--muted); }}
+  .how {{ font-size: 14px; color: var(--muted); max-width: 46em; }}
   .mini dd {{ margin: 0; font-size: 15px; font-variant-numeric: tabular-nums; }}
   .note {{ background: #fbf8ef; border-left: 3px solid #c8a35a; padding: 16px 20px; margin: 24px 0; font-size: 15px; }}
   ul {{ margin: 0 0 16px; padding-left: 22px; }}
@@ -268,8 +301,10 @@ def build() -> str:
   </section>
 
   <h2>每個實例 <span class="num-badge">{total_rows} 行</span></h2>
+  <p class="how">每題的平均分＝該題所有實例分數的平均（不可行記 0）；總平均＝六題平均分再平均一次，
+     所以每題等權，不因實例多而多重。比分數欄旁邊那列是「我們的值與參考值的差」，負號＝比參考好。</p>
   <table>
-    <thead><tr><th>題</th><th>實例</th><th>可行性</th><th class="num">分數</th><th class="num">耗時</th><th>備註</th></tr></thead>
+    <thead><tr><th>實例</th><th>可行性</th><th class="num">分數</th><th class="num">耗時 (s)</th><th>與參考比</th></tr></thead>
     <tbody>
       {''.join(table_rows)}
     </tbody>
@@ -293,10 +328,11 @@ def build() -> str:
   <h2>怎麼覆核</h2>
   <p>下面每一行都能在乾淨 clone 上跑。檢查器是官方那一份，目標值另外用一份獨立算式重算，
      分數按官方公式算。</p>
-  <pre>git clone &lt;repo&gt; &amp;&amp; cd frontieror
+  <pre>git clone https://github.com/hkmpn9s6dh-commits/hackathon-2026-frontieror.git
+cd hackathon-2026-frontieror
 python -m pip install ortools          # 只有 hoffman1993 需要
 python scripts/fetch_data.py          # 取 large 實例，按 sha256 校驗
-python harness/verify.py --tier tiny  # 只跑六個 tiny 實例，約 4 秒
+python harness/verify.py --tier tiny  # 只跑六個 tiny 實例，約 20 秒
 python harness/verify.py              # 全部 36 個實例
 python harness/build_submission.py    # 打包成 submission.zip（&lt; 4 MB）</pre>
 

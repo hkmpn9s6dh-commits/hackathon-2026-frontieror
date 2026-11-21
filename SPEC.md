@@ -84,7 +84,7 @@ checker、schema、題面、tiny 實例、參考目標值）；large 實例 40 M
 | AC-06 | solver 不碰網路（沙箱沒有網路） | 正則掃 `import requests/urllib/socket/httpx` |
 | AC-07 | 提交包 ≤ 4 MB | `build_submission.archive_size()` |
 | AC-08 | 結果可由倉庫內檔案重現 | `benchmark/instances.json` 有每個實例的 sha256 與參考值 |
-| AC-09 | 分數按官方公式算，不是自定的 | `harness/verify.py::score_one`，對照 `/docs/main/scoring` 原文 |
+| AC-09 | 分數按官方公式算，且方向正確 | `harness/directions.py`（最小化＝參考÷我們；最大化＝我們÷參考），對照 `/docs/main/scoring` 原文 |
 | AC-10 | 全新 clone 只照 README 能跑出同一結論 | 閘 C，見 `docs/04-PROOF.md` |
 
 ## 五、明確不做

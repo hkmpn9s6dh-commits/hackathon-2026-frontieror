@@ -17,6 +17,9 @@ import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, "out")
+sys.path.insert(0, os.path.join(ROOT, "harness"))
+
+import directions  # noqa: E402
 
 
 def main() -> int:
@@ -38,6 +41,16 @@ def main() -> int:
             seen[slug] = path
         rows.extend(data["rows"])
         checks.extend(data["checks"])
+
+    # Recompute every score from the objective the checker accepted, using the
+    # problem's own direction; never reuse a per-run number.
+    for row in rows:
+        row["direction"] = directions.DIRECTION[row["slug"]]
+        row["score"] = (
+            round(directions.score(row["reference_objective"], row["objective"], row["direction"]), 4)
+            if row["feasible"]
+            else 0.0
+        )
 
     problems = {}
     for row in rows:

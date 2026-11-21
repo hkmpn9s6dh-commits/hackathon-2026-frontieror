@@ -33,7 +33,7 @@
    "instances": 6,
    "feasible": 6,
    "max_wall_s": 55.22,
-   "mean_score": 1.1656
+   "mean_score": 0.8645
   },
   "hoffman1993": {
    "instances": 6,
@@ -48,7 +48,7 @@
    "mean_score": 0.9418
   }
  },
- "mean_score": 0.8912,
+ "mean_score": 0.841,
  "rows": [
   {
    "slug": "barnhart2000",
@@ -62,7 +62,8 @@
    "feasible": true,
    "violations": [],
    "computed_objective": 5401.0,
-   "reported_objective": 5401.0
+   "reported_objective": 5401.0,
+   "direction": "minimize"
   },
   {
    "slug": "barnhart2000",
@@ -76,7 +77,8 @@
    "feasible": true,
    "violations": [],
    "computed_objective": 4796.0,
-   "reported_objective": 4796.0
+   "reported_objective": 4796.0,
+   "direction": "minimize"
   },
   {
    "slug": "barnhart2000",
@@ -90,7 +92,8 @@
    "feasible": true,
    "violations": [],
    "computed_objective": 5143.0,
-   "reported_objective": 5143.0
+   "reported_objective": 5143.0,
+   "direction": "minimize"
   },
   {
    "slug": "barnhart2000",
@@ -104,7 +107,8 @@
    "feasible": true,
    "violations": [],
    "computed_objective": 5402.0,
-   "reported_objective": 5402.0
+   "reported_objective": 5402.0,
+   "direction": "minimize"
   },
   {
    "slug": "barnhart2000",
@@ -118,7 +122,8 @@
    "feasible": true,
    "violations": [],
    "computed_objective": 5150.0,
-   "reported_objective": 5150.0
+   "reported_objective": 5150.0,
+   "direction": "minimize"
   },
   {
    "slug": "barnhart2000",
@@ -132,7 +137,8 @@
    "feasible": true,
    "violations": [],
    "computed_objective": 64.0,
-   "reported_objective": 64.0
+   "reported_objective": 64.0,
+   "direction": "minimize"
   },
   {
    "slug": "bodur2017",
@@ -146,7 +152,8 @@
    "feasible": true,
    "violations": [],
    "computed_objective": 71434.01615555266,
-   "reported_objective": 71434.01615555266
+   "reported_objective": 71434.01615555266,
+   "direction": "minimize"
   },
   {
    "slug": "bodur2017",
@@ -160,7 +167,8 @@
    "feasible": true,
    "violations": [],
    "computed_objective": 61838.58106354389,
-   "reported_objective": 61838.58106354389
+   "reported_objective": 61838.58106354389,
+   "direction": "minimize"
   },
   {
    "slug": "bodur2017",
@@ -174,7 +182,8 @@
    "feasible": true,
    "violations": [],
    "computed_objective": 53429.52539574546,
-   "reported_objective": 53429.52539574545
+   "reported_objective": 53429.52539574545,
+   "direction": "minimize"
   },
   {
    "slug": "bodur2017",
@@ -188,7 +197,8 @@
    "feasible": true,
    "violations": [],
    "computed_objective": 49196.960875364384,
-   "reported_objective": 49196.960875364384
+   "reported_objective": 49196.960875364384,
+   "direction": "minimize"
   },
   {
    "slug": "bodur2017",
@@ -202,7 +212,8 @@
    "feasible": true,
    "violations": [],
    "computed_objective": 51655.75969206902,
-   "reported_objective": 51655.75969206903
+   "reported_objective": 51655.75969206903,
+   "direction": "minimize"
   },
   {
    "slug": "bodur2017",
@@ -216,7 +227,8 @@
    "feasible": true,
    "violations": [],
    "computed_objective": 87943.12783271771,
-   "reported_objective": 87943.12783271771
+   "reported_objective": 87943.12783271771,
+   "direction": "minimize"
   },
   {
    "slug": "cordeau2006",
@@ -230,7 +242,8 @@
    "feasible": true,
    "violations": [],
    "computed_objective": 517.9178976189263,
-   "reported_objective": 517.9178976189262
+   "reported_objective": 517.9178976189262,
+   "direction": "minimize"
   },
   {
    "slug": "cordeau2006",
@@ -244,7 +257,8 @@
    "feasible": true,
    "violations": [],
    "computed_objective": 342.69810056995186,
-   "reported_objective": 342.6981005699518
+   "reported_objective": 342.6981005699518,
+   "direction": "minimize"
   },
   {
    "slug": "cordeau2006",
@@ -258,7 +272,8 @@
    "feasible": true,
    "violations": [],
    "computed_objective": 255.5428819780584,
-   "reported_objective": 255.54288197805843
+   "reported_objective": 255.54288197805843,
+   "direction": "minimize"
   },
   {
    "slug": "cordeau2006",
@@ -272,7 +287,8 @@
    "feasible": true,
    "violations": [],
    "computed_objective": 527.858351055751,
-   "reported_objective": 527.8583510557509
+   "reported_objective": 527.8583510557509,
+   "direction": "minimize"
   },
   {
    "slug": "cordeau2006",
@@ -286,7 +302,8 @@
    "feasible": true,
    "violations": [],
    "computed_objective": 137.4938177639925,
-   "reported_objective": 137.49381776399247
+   "reported_objective": 137.49381776399247,
+   "direction": "minimize"
   },
   {
    "slug": "cordeau2006",
@@ -300,7 +317,8 @@
    "feasible": true,
    "violations": [],
    "computed_objective": 315.3019559445349,
-   "reported_objective": 315.30195594453494
+   "reported_objective": 315.30195594453494,
+   "direction": "minimize"
   },
   {
    "slug": "fischetti1998",
@@ -310,11 +328,12 @@
    "wall_s": 51.733,
    "reference_objective": 17388.0,
    "objective": 13925.0,
-   "score": 1.2487,
+   "score": 0.8008,
    "feasible": true,
    "violations": [],
    "computed_objective": 13925.0,
-   "reported_objective": 13925.0
+   "reported_objective": 13925.0,
+   "direction": "maximize"
   },
   {
    "slug": "fischetti1998",
@@ -324,11 +343,12 @@
    "wall_s": 14.94,
    "reference_objective": 9528.0,
    "objective": 7421.0,
-   "score": 1.2839,
+   "score": 0.7789,
    "feasible": true,
    "violations": [],
    "computed_objective": 7421.0,
-   "reported_objective": 7421.0
+   "reported_objective": 7421.0,
+   "direction": "maximize"
   },
   {
    "slug": "fischetti1998",
@@ -338,11 +358,12 @@
    "wall_s": 55.217,
    "reference_objective": 20169.0,
    "objective": 16524.0,
-   "score": 1.2206,
+   "score": 0.8193,
    "feasible": true,
    "violations": [],
    "computed_objective": 16524.0,
-   "reported_objective": 16524.0
+   "reported_objective": 16524.0,
+   "direction": "maximize"
   },
   {
    "slug": "fischetti1998",
@@ -352,11 +373,12 @@
    "wall_s": 55.208,
    "reference_objective": 23368.0,
    "objective": 20079.0,
-   "score": 1.1638,
+   "score": 0.8593,
    "feasible": true,
    "violations": [],
    "computed_objective": 20079.0,
-   "reported_objective": 20079.0
+   "reported_objective": 20079.0,
+   "direction": "maximize"
   },
   {
    "slug": "fischetti1998",
@@ -366,11 +388,12 @@
    "wall_s": 55.209,
    "reference_objective": 25982.0,
    "objective": 24131.0,
-   "score": 1.0767,
+   "score": 0.9288,
    "feasible": true,
    "violations": [],
    "computed_objective": 24131.0,
-   "reported_objective": 24131.0
+   "reported_objective": 24131.0,
+   "direction": "maximize"
   },
   {
    "slug": "fischetti1998",
@@ -384,7 +407,8 @@
    "feasible": true,
    "violations": [],
    "computed_objective": 287.0,
-   "reported_objective": 287.0
+   "reported_objective": 287.0,
+   "direction": "maximize"
   },
   {
    "slug": "hoffman1993",
@@ -398,7 +422,8 @@
    "feasible": true,
    "violations": [],
    "computed_objective": 2117.0,
-   "reported_objective": 2117.0
+   "reported_objective": 2117.0,
+   "direction": "minimize"
   },
   {
    "slug": "hoffman1993",
@@ -412,7 +437,8 @@
    "feasible": true,
    "violations": [],
    "computed_objective": 229.0,
-   "reported_objective": 229.0
+   "reported_objective": 229.0,
+   "direction": "minimize"
   },
   {
    "slug": "hoffman1993",
@@ -426,7 +452,8 @@
    "feasible": true,
    "violations": [],
    "computed_objective": 973.0,
-   "reported_objective": 973.0
+   "reported_objective": 973.0,
+   "direction": "minimize"
   },
   {
    "slug": "hoffman1993",
@@ -442,7 +469,8 @@
     "empty required decision witness field(s): selected_rotations"
    ],
    "computed_objective": 0.0,
-   "reported_objective": 0.0
+   "reported_objective": 0.0,
+   "direction": "minimize"
   },
   {
    "slug": "hoffman1993",
@@ -458,7 +486,8 @@
     "empty required decision witness field(s): selected_rotations"
    ],
    "computed_objective": 0.0,
-   "reported_objective": 0.0
+   "reported_objective": 0.0,
+   "direction": "minimize"
   },
   {
    "slug": "hoffman1993",
@@ -472,7 +501,8 @@
    "feasible": true,
    "violations": [],
    "computed_objective": 16.0,
-   "reported_objective": 16.0
+   "reported_objective": 16.0,
+   "direction": "minimize"
   },
   {
    "slug": "nagy2015",
@@ -486,7 +516,8 @@
    "feasible": true,
    "violations": [],
    "computed_objective": 13711.0,
-   "reported_objective": 13711.0
+   "reported_objective": 13711.0,
+   "direction": "minimize"
   },
   {
    "slug": "nagy2015",
@@ -500,7 +531,8 @@
    "feasible": true,
    "violations": [],
    "computed_objective": 3963.0,
-   "reported_objective": 3963.0
+   "reported_objective": 3963.0,
+   "direction": "minimize"
   },
   {
    "slug": "nagy2015",
@@ -514,7 +546,8 @@
    "feasible": true,
    "violations": [],
    "computed_objective": 13202.0,
-   "reported_objective": 13202.0
+   "reported_objective": 13202.0,
+   "direction": "minimize"
   },
   {
    "slug": "nagy2015",
@@ -528,7 +561,8 @@
    "feasible": true,
    "violations": [],
    "computed_objective": 3963.0,
-   "reported_objective": 3963.0
+   "reported_objective": 3963.0,
+   "direction": "minimize"
   },
   {
    "slug": "nagy2015",
@@ -542,7 +576,8 @@
    "feasible": true,
    "violations": [],
    "computed_objective": 13711.0,
-   "reported_objective": 13711.0
+   "reported_objective": 13711.0,
+   "direction": "minimize"
   },
   {
    "slug": "nagy2015",
@@ -556,7 +591,8 @@
    "feasible": true,
    "violations": [],
    "computed_objective": 1142.0,
-   "reported_objective": 1142.0
+   "reported_objective": 1142.0,
+   "direction": "minimize"
   }
  ],
  "checks": [

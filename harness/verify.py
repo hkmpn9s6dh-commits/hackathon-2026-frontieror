@@ -29,6 +29,7 @@ sys.path.insert(0, HERE)
 
 import run_one  # noqa: E402
 import objective as objlib  # noqa: E402
+import directions  # noqa: E402
 
 BENCH = os.path.join(ROOT, "benchmark")
 OUT = os.path.join(ROOT, "out")
@@ -78,17 +79,9 @@ def run_checker(slug: str, inst: str, sol: str) -> dict:
     return payload
 
 
-def score_one(reference: float, value: float) -> float:
-    """The scoring page's instance score (minimise problems only here)."""
-    if reference is None or value is None:
-        return 0.0
-    if reference == 0:
-        return 2.0 if value < 0 else 0.0
-    if (reference > 0) == (value > 0):
-        ratio = reference / value if reference > 0 else value / reference
-    else:
-        ratio = 2.0 if value < reference else 0.0
-    return max(0.0, min(2.0, ratio))
+def score_one(reference: float, value: float, direction: str = "minimize") -> float:
+    """The scoring page's instance score, for the problem's own direction."""
+    return directions.score(reference, value, direction)
 
 
 def main() -> int:
@@ -140,6 +133,7 @@ def main() -> int:
                 "score": 0.0,
                 "feasible": False,
                 "violations": [],
+                "solver_log": (run.get("stderr_tail") or "").strip()[-300:],
             }
             if run["status"] != "ok":
                 row["violations"] = [run.get("stderr_tail", "")[-300:] or run["status"]]
@@ -181,7 +175,7 @@ def main() -> int:
                     same,
                     f"reported {rep} vs independently recomputed {comp}",
                 )
-                row["score"] = round(score_one(m["reference_objective"], comp), 4)
+                row["score"] = round(score_one(m["reference_objective"], comp, directions.DIRECTION[slug]), 4)
             rows.append(row)
             print(
                 f"  {slug:14s} {m['name']:22s} {run['status']:8s} {run['wall_s']:6.2f}s "

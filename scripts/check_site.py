@@ -37,7 +37,8 @@ def main() -> int:
 
     # One row per instance, in the same order as results.json.
     body = html.split("<tbody>")[1].split("</tbody>")[0]
-    page_rows = body.count("<tr")
+    group_rows = len(re.findall(r'<tr class="group">', body))
+    page_rows = body.count("<tr") - group_rows
     check("one table row per instance", page_rows == len(rows), f"{page_rows} vs {len(rows)}")
 
     # Failure rows are marked on the row, not by colour alone.

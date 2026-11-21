@@ -12,16 +12,21 @@
 
 ## 一眼看完
 
-| 題 | 算法 | tiny + large 可行 | 平均分（參考＝1.000） |
+| 題 | 算法 | 可行/實例 | 平均分（參考＝1.000） |
 |---|---|---|---|
-| `cordeau2006` DARP | 最便宜可行插入 + 真時刻表 | 見 `out/results.json` | |
-| `fischetti1998` OP | 獎金/繞路插入 + 2-opt + 多輪重啟 | | |
-| `barnhart2000` ODIMCF | 最寬路徑貪心 + 多種排序 | | |
-| `hoffman1993` SPP | min-conflicts → 大鄰域 → CP-SAT | | |
-| `bodur2017` SCFLP | 開倉集合刪除 + 貪心運輸 | | |
-| `nagy2015` VRPDDP | 送/取拆成任務 + 節約法 + 2-opt | | |
+| `cordeau2006` DARP | 最便宜可行插入 + 真時刻表 | 6/6 | 0.964 |
+| `fischetti1998` OP（**最大化**） | 獎金/繞路插入 + 2-opt + 多輪重啟 | 6/6 | 0.865 |
+| `barnhart2000` ODIMCF | 最寬路徑貪心 + 多種排序 | 6/6 | 0.940 |
+| `hoffman1993` SPP | min-conflicts → 大鄰域 → CP-SAT | 4/6 | 0.421 |
+| `bodur2017` SCFLP | 開倉集合刪除 + 貪心運輸 | 6/6 | 0.915 |
+| `nagy2015` VRPDDP | 送/取拆成任務 + 節約法 + 2-opt | 6/6 | 0.942 |
 
-（表裡的數字每次 `python harness/verify.py` 會重寫 `out/results.json`，那份是準的。）
+全部 36 個實例：**34 可行、2 個記 0**，六題平均 **0.841**（每題等權再平均）。
+表裡的數字每次 `python harness/verify.py` 會重寫 `out/results.json`，那份是準的。
+
+**方向要緊**：六題裡只有定向越野是最大化，分數是「我們 ÷ 參考」；其餘五題是最小化，
+分數是「參考 ÷ 我們」。搞反會把 0.80 寫成 1.25 —— 本輪真的寫反過一次，被盲審抓出來，
+修法是把方向寫進 `harness/directions.py`，`scripts/merge_results.py` 一律重算分數。
 
 ## 跑
 

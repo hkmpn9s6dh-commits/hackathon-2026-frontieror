@@ -52,7 +52,8 @@ def main() -> int:
     lines.append("")
     lines.append("## 1. 逐實例結果")
     lines.append("")
-    lines.append(f"時間上限 60 s／實例。分數＝參考目標 ÷ 我們的值（最小化），參考＝1.000。"
+    lines.append(f"時間上限 60 s／實例。分數照官方評分頁：最小化題「參考 ÷ 我們」，最大化題"
+                 f"（`fischetti1998`）「我們 ÷ 參考」；與參考相同＝1.000。"
                  f"共 {len(rows)} 個實例，可行 {sum(1 for r in rows if r['feasible'])} 個，"
                  f"平均分 {data['mean_score']:.4f}。")
     lines.append("")

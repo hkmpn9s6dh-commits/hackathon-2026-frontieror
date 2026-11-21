@@ -7,3 +7,4 @@ submission*.zip
 runs/
 out/*.tmp
 _*
+_pages/
