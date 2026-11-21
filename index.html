@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>六十秒的演算法 — FrontierOR Challenge</title>
+<style>
+  :root {
+    --paper: #f7f5f0; --ink: #16150f; --muted: #6b6659; --line: #e0dbcf;
+    --red: #b3271e; --green: #1f5d4c; --card: #fffdf8;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--paper); color: var(--ink);
+         font: 16px/1.65 -apple-system, "Segoe UI", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif; }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 56px 24px 96px; }
+  header { border-bottom: 1px solid var(--line); padding-bottom: 22px; margin-bottom: 28px; }
+  .kicker { font-size: 13px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin: 0 0 14px; }
+  h1 { font-size: 34px; line-height: 1.2; margin: 0 0 10px; letter-spacing: -.01em; }
+  .lede { font-size: 17px; color: #3a3730; margin: 0; max-width: 42em; }
+  .meta { margin-top: 18px; font-size: 14px; color: var(--muted); }
+  .meta code { font-size: 13px; }
+  h2 { font-size: 22px; margin: 64px 0 16px; letter-spacing: -.01em; }
+  h2 .num-badge { font-size: 13px; color: var(--muted); font-weight: 400; margin-left: 10px; }
+  p { margin: 0 0 14px; }
+  .hero { display: block; }
+  .statline { display: grid; grid-template-columns: 210px 1fr; gap: 32px; align-items: start; margin-top: 24px; }
+  .stat { font-size: 46px; line-height: 1.1; font-weight: 600; letter-spacing: -.02em; }
+  .stat small { display: block; font-size: 14px; font-weight: 400; color: var(--muted); letter-spacing: 0; margin-top: 8px; }
+  .stat .tag { display: inline-block; font-size: 12px; font-weight: 500; color: #8a5a12;
+                background: #fbf0d8; border-radius: 3px; padding: 1px 6px; vertical-align: 12px; margin-left: 8px; }
+  .ruler { background: var(--card); border: 1px solid var(--line); border-radius: 6px; padding: 16px 20px 6px; }
+  .ruler svg { width: 100%; height: auto; display: block; }
+  .ruler .cap { font-size: 13px; color: var(--muted); margin: 6px 0 8px; }
+  table { width: 100%; border-collapse: collapse; font-size: 15px; margin: 8px 0 0; }
+  th { text-align: left; font-weight: 600; font-size: 13px; letter-spacing: .04em; color: var(--muted);
+        padding: 10px 10px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+  td { padding: 10px 10px; border-bottom: 1px solid #eee8db; vertical-align: top; }
+  td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+  .mono, code { font-family: ui-monospace, SFMono-Regular, "Cascadia Mono", Menlo, monospace; }
+  tr.group td { background: #f2eee3; font-size: 14px; padding-top: 12px; padding-bottom: 8px; }
+  tr.group .slug { color: var(--muted); font-size: 12px; }
+  tr.bad td { background: #fbf0ee; }
+  tr.bad td:first-child { box-shadow: inset 3px 0 0 var(--red); }
+  .cards { display: grid; gap: 20px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 6px; padding: 22px 24px 16px; }
+  .card-head { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; }
+  .card h3 { font-size: 18px; margin: 0 0 10px; }
+  .card .slug { font-size: 13px; color: var(--muted); font-weight: 400; }
+  .badge { font-size: 13px; padding: 2px 9px; border-radius: 999px; white-space: nowrap; }
+  .badge.ok { background: #e8f0ec; color: var(--green); }
+  .badge.warn { background: #f7e4e1; color: var(--red); }
+  .card p { font-size: 16px; margin: 0 0 10px; }
+  .card .what { color: #3a3730; }
+  .card .why { color: var(--muted); }
+  .mini { display: flex; gap: 28px; margin: 6px 0 12px; padding-top: 12px; border-top: 1px solid #efe9dc; }
+  .mini div { display: flex; gap: 8px; align-items: baseline; }
+  .mini dt { font-size: 13px; color: var(--muted); }
+  .how { font-size: 14px; color: var(--muted); max-width: 46em; }
+  .mini dd { margin: 0; font-size: 15px; font-variant-numeric: tabular-nums; }
+  .mini .strip { margin-left: auto; }
+  .mini .strip dd { font-size: 13px; color: var(--muted); }
+  .note { background: #fbf8ef; border-left: 3px solid #c8a35a; padding: 16px 20px; margin: 24px 0; font-size: 15px; }
+  ul { margin: 0 0 16px; padding-left: 22px; }
+  li { margin-bottom: 8px; }
+  pre { background: #1d1c18; color: #f2efe6; padding: 16px 18px; border-radius: 6px; overflow-x: auto;
+         font-size: 13px; line-height: 1.6; }
+  footer { margin-top: 72px; padding-top: 22px; border-top: 1px solid var(--line); font-size: 13px; color: var(--muted); }
+  @media (max-width: 760px) {
+    .statline { grid-template-columns: 1fr; gap: 16px; }
+    h1 { font-size: 27px; }
+    .stat { font-size: 36px; }
+    .wrap { padding: 36px 18px 72px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <p class="kicker">FrontierOR Challenge · 測試階段 · 六題</p>
+    <h1>六十秒的演算法</h1>
+    <p class="lede">六個沒見過的運籌題，同一條生產線：讀 schema、選構造、自己判可行、自己決定什麼時候停。判分用官方檢查器。</p>
+    <p class="meta">2 vCPU / 4 GB / 無網路 / 每題 60 秒 · 參考值＝<code>frontieror/FrontierOR</code>（CC BY 4.0）的 Gurobi 解</p>
+  </header>
+
+  <section class="hero">
+    <div class="ruler">
+      <svg viewBox="0 0 666 222" role="img" aria-label="每題平均分（0 到 1.2，1.0 是參考），右列是最慢一次的牆鐘"><line x1="500.0" y1="12" x2="500.0" y2="192" stroke="#3a3730" stroke-width="1.5" stroke-dasharray="4 4"/><line x1="150" y1="12" x2="150" y2="192" stroke="#d8d2c4" stroke-width="1"/><text x="138" y="34" text-anchor="end" font-size="15" fill="#16150f">DARP</text><rect x="150" y="20" width="420" height="18" fill="#eae5d8" rx="3"/><rect x="150" y="20" width="337.5" height="18" fill="#3a3730" rx="3"/><text x="582" y="34" font-size="13" fill="#16150f">0.96</text><text x="620" y="34" font-size="12" fill="#6b6659">43s</text><text x="138" y="62" text-anchor="end" font-size="15" fill="#16150f">OP</text><rect x="150" y="48" width="420" height="18" fill="#eae5d8" rx="3"/><rect x="150" y="48" width="302.6" height="18" fill="#3a3730" rx="3"/><text x="582" y="62" font-size="13" fill="#16150f">0.86</text><text x="620" y="62" font-size="12" fill="#3a3730" font-weight="600">55s*</text><text x="138" y="90" text-anchor="end" font-size="15" fill="#16150f">ODIMCF</text><rect x="150" y="76" width="420" height="18" fill="#eae5d8" rx="3"/><rect x="150" y="76" width="328.9" height="18" fill="#3a3730" rx="3"/><text x="582" y="90" font-size="13" fill="#16150f">0.94</text><text x="620" y="90" font-size="12" fill="#6b6659">10s</text><text x="138" y="118" text-anchor="end" font-size="15" fill="#16150f">SPP</text><rect x="150" y="104" width="420" height="18" fill="#eae5d8" rx="3"/><rect x="150" y="104" width="147.2" height="18" fill="#b3271e" rx="3"/><text x="582" y="118" font-size="13" fill="#16150f">0.42</text><text x="620" y="118" font-size="12" fill="#3a3730" font-weight="600">55s*</text><text x="138" y="146" text-anchor="end" font-size="15" fill="#16150f">SCFLP</text><rect x="150" y="132" width="420" height="18" fill="#eae5d8" rx="3"/><rect x="150" y="132" width="320.4" height="18" fill="#3a3730" rx="3"/><text x="582" y="146" font-size="13" fill="#16150f">0.92</text><text x="620" y="146" font-size="12" fill="#6b6659">16s</text><text x="138" y="174" text-anchor="end" font-size="15" fill="#16150f">VRPDDP</text><rect x="150" y="160" width="420" height="18" fill="#eae5d8" rx="3"/><rect x="150" y="160" width="329.6" height="18" fill="#3a3730" rx="3"/><text x="582" y="174" font-size="13" fill="#16150f">0.94</text><text x="620" y="174" font-size="12" fill="#6b6659">4s</text><text x="582" y="12" font-size="11" fill="#6b6659">平均分</text><text x="620" y="12" font-size="11" fill="#6b6659">最慢</text><text x="500.0" y="210" text-anchor="middle" font-size="12" fill="#3a3730">1.0 參考</text><text x="570" y="210" text-anchor="end" font-size="11" fill="#6b6659">1.2</text></svg>
+      <p class="cap">橫條＝那一題的平均分，虛線是 1.0（與參考相同）。右列是最慢一次的牆鐘；打 * 的表示用滿了預算（我們在 60 秒前 5–7 秒停手寫答案，所以會落在 53–55 秒上下）。紅條＝這一題有實例沒解出來。</p>
+    </div>
+    <div class="statline">
+      <p class="stat">0.841<span class="tag">估算</span>
+        <small>六題平均分（參考＝1.000）；34/36 個實例拿到可行解</small>
+      </p>
+      <div>
+        <p>36 個實例裡 34 個拿到可行解；集合劃分有 2 個實例在 60 秒內找不到覆蓋。 最慢的一次 55 秒上下就停手寫答案（預算 60 秒，
+         我們自留 5 秒）。</p>
+        <p class="note">分數照官方評分頁算：最小化題是「參考 ÷ 我們」，最大化題（本場的定向越野）反過來；與參考相同得 1.000，比參考好最多到 2.000。這裡的參考值是<b>基準資料集</b>裡的 Gurobi 目標，不是比賽後台凍結的參考值，所以它是估計，不是成績。</p>
+      </div>
+    </div>
+  </section>
+
+  <h2>每個實例 <span class="num-badge">36 行</span></h2>
+  <p class="how">每題的平均分＝該題所有實例分數的平均（不可行記 0）；總平均＝六題平均分再平均一次，
+     所以每題等權，不因實例多而多重。比分數欄旁邊那列是「我們的值與參考值的差」，負號＝比參考好。</p>
+  <table>
+    <thead><tr><th>實例</th><th>可行性</th><th class="num">分數</th>
+      <th class="num">我們的值</th><th class="num">參考值</th><th class="num">耗時 (s)</th></tr></thead>
+    <tbody>
+      <tr class="group"><td colspan="5"><b>DARP</b> <span class="slug mono">cordeau2006</span> — 6/6 可行，平均 0.964</td></tr><tr><td class="mono">L1</td><td>可行</td><td class="num">0.960</td><td class="num">517.9</td><td class="num">497.1</td><td class="num">23.0</td></tr><tr><td class="mono">L2</td><td>可行</td><td class="num">0.962</td><td class="num">342.7</td><td class="num">329.6</td><td class="num">42.8</td></tr><tr><td class="mono">L3</td><td>可行</td><td class="num">0.954</td><td class="num">255.5</td><td class="num">243.8</td><td class="num">26.6</td></tr><tr><td class="mono">L4</td><td>可行</td><td class="num">0.964</td><td class="num">527.9</td><td class="num">508.7</td><td class="num">42.7</td></tr><tr><td class="mono">L5</td><td>可行</td><td class="num">0.953</td><td class="num">137.5</td><td class="num">131.1</td><td class="num">1.8</td></tr><tr><td class="mono">tiny</td><td>可行</td><td class="num">0.993</td><td class="num">315.3</td><td class="num">313.2</td><td class="num">5.1</td></tr><tr class="group"><td colspan="5"><b>OP</b> <span class="slug mono">fischetti1998</span> — 6/6 可行，平均 0.865</td></tr><tr><td class="mono">L1</td><td>可行</td><td class="num">0.801</td><td class="num">13,925.0</td><td class="num">17,388.0</td><td class="num">51.7</td></tr><tr><td class="mono">L2</td><td>可行</td><td class="num">0.779</td><td class="num">7,421.0</td><td class="num">9,528.0</td><td class="num">14.9</td></tr><tr><td class="mono">L3</td><td>可行</td><td class="num">0.819</td><td class="num">16,524.0</td><td class="num">20,169.0</td><td class="num">55.2</td></tr><tr><td class="mono">L4</td><td>可行</td><td class="num">0.859</td><td class="num">20,079.0</td><td class="num">23,368.0</td><td class="num">55.2</td></tr><tr><td class="mono">L5</td><td>可行</td><td class="num">0.929</td><td class="num">24,131.0</td><td class="num">25,982.0</td><td class="num">55.2</td></tr><tr><td class="mono">tiny</td><td>可行</td><td class="num">1.000</td><td class="num">287.0</td><td class="num">287.0</td><td class="num">0.2</td></tr><tr class="group"><td colspan="5"><b>ODIMCF</b> <span class="slug mono">barnhart2000</span> — 6/6 可行，平均 0.940</td></tr><tr><td class="mono">L1</td><td>可行</td><td class="num">0.917</td><td class="num">5,401.0</td><td class="num">4,951.0</td><td class="num">7.3</td></tr><tr><td class="mono">L2</td><td>可行</td><td class="num">0.911</td><td class="num">4,796.0</td><td class="num">4,368.0</td><td class="num">8.5</td></tr><tr><td class="mono">L3</td><td>可行</td><td class="num">0.928</td><td class="num">5,143.0</td><td class="num">4,771.0</td><td class="num">9.8</td></tr><tr><td class="mono">L4</td><td>可行</td><td class="num">0.959</td><td class="num">5,402.0</td><td class="num">5,180.0</td><td class="num">7.6</td></tr><tr><td class="mono">L5</td><td>可行</td><td class="num">0.924</td><td class="num">5,150.0</td><td class="num">4,761.0</td><td class="num">7.1</td></tr><tr><td class="mono">tiny</td><td>可行</td><td class="num">1.000</td><td class="num">64.0</td><td class="num">64.0</td><td class="num">0.7</td></tr><tr class="group"><td colspan="5"><b>SPP</b> <span class="slug mono">hoffman1993</span> — 4/6 可行，平均 0.420</td></tr><tr><td class="mono">L1</td><td>可行</td><td class="num">0.310</td><td class="num">2,117.0</td><td class="num">657.0</td><td class="num">54.9</td></tr><tr><td class="mono">L2</td><td>可行</td><td class="num">1.000</td><td class="num">229.0</td><td class="num">229.0</td><td class="num">1.4</td></tr><tr><td class="mono">L3</td><td>可行</td><td class="num">0.213</td><td class="num">973.0</td><td class="num">207.0</td><td class="num">54.3</td></tr><tr class="bad"><td class="mono">L4</td><td>不可行</td><td class="num">0.000</td><td class="num">—</td><td class="num">331.0</td><td class="num">54.8</td></tr><tr class="bad"><td class="mono">L5</td><td>不可行</td><td class="num">0.000</td><td class="num">—</td><td class="num">180.0</td><td class="num">55.1</td></tr><tr><td class="mono">tiny</td><td>可行</td><td class="num">1.000</td><td class="num">16.0</td><td class="num">16.0</td><td class="num">1.0</td></tr><tr class="group"><td colspan="5"><b>SCFLP</b> <span class="slug mono">bodur2017</span> — 6/6 可行，平均 0.915</td></tr><tr><td class="mono">L1</td><td>可行</td><td class="num">0.892</td><td class="num">71,434.0</td><td class="num">63,727.5</td><td class="num">11.5</td></tr><tr><td class="mono">L2</td><td>可行</td><td class="num">0.882</td><td class="num">61,838.6</td><td class="num">54,529.8</td><td class="num">6.0</td></tr><tr><td class="mono">L3</td><td>可行</td><td class="num">0.904</td><td class="num">53,429.5</td><td class="num">48,283.7</td><td class="num">3.2</td></tr><tr><td class="mono">L4</td><td>可行</td><td class="num">0.986</td><td class="num">49,197.0</td><td class="num">48,495.9</td><td class="num">15.0</td></tr><tr><td class="mono">L5</td><td>可行</td><td class="num">0.979</td><td class="num">51,655.8</td><td class="num">50,576.0</td><td class="num">15.8</td></tr><tr><td class="mono">tiny</td><td>可行</td><td class="num">0.850</td><td class="num">87,943.1</td><td class="num">74,706.1</td><td class="num">1.2</td></tr><tr class="group"><td colspan="5"><b>VRPDDP</b> <span class="slug mono">nagy2015</span> — 6/6 可行，平均 0.942</td></tr><tr><td class="mono">L1</td><td>可行</td><td class="num">1.020</td><td class="num">13,711.0</td><td class="num">13,986.0</td><td class="num">1.1</td></tr><tr><td class="mono">L2</td><td>可行</td><td class="num">0.921</td><td class="num">3,963.0</td><td class="num">3,652.0</td><td class="num">3.7</td></tr><tr><td class="mono">L3</td><td>可行</td><td class="num">1.012</td><td class="num">13,202.0</td><td class="num">13,361.0</td><td class="num">0.7</td></tr><tr><td class="mono">L4</td><td>可行</td><td class="num">0.864</td><td class="num">3,963.0</td><td class="num">3,423.0</td><td class="num">2.7</td></tr><tr><td class="mono">L5</td><td>可行</td><td class="num">1.004</td><td class="num">13,711.0</td><td class="num">13,762.0</td><td class="num">0.6</td></tr><tr><td class="mono">tiny</td><td>可行</td><td class="num">0.830</td><td class="num">1,142.0</td><td class="num">948.0</td><td class="num">0.3</td></tr>
+    </tbody>
+  </table>
+
+  <h2>六條生產線</h2>
+  <div class="cards">
+      <article class="card">
+        <div class="card-head">
+          <h3>Dial-a-Ride <span class="slug mono">cordeau2006</span></h3>
+          <span class="badge ok">全部可行</span>
+        </div>
+        <p class="what">把 36 位乘客的接送塞進 4 輛車：時間窗、共乘容量、最長乘車時間、最長趟次。</p>
+        <p><strong>怎麼做：</strong>最便宜可行插入。每插一對（上車、下車）就從車場重排一次時刻表，用真時刻表判可行性，不用估算。</p>
+        <p class="why"><strong>為什麼：</strong>時間窗讓「先排誰」比「走多短」更關鍵，所以要真的排一遍時鐘。</p>
+        <dl class="mini">
+          <div><dt>平均分</dt><dd class="num">0.964</dd></div>
+          <div><dt>最慢一次</dt><dd class="num">42.8s</dd></div>
+          <div class="strip"><dt>各實例</dt><dd class="mono">0.96 0.96 0.95 0.96 0.95 0.99</dd></div>
+        </dl>
+      </article>
+      <article class="card">
+        <div class="card-head">
+          <h3>Orienteering <span class="slug mono">fischetti1998</span></h3>
+          <span class="badge ok">全部可行</span>
+        </div>
+        <p class="what">單車、有時間預算，選一條回程閉環，把沿路城市的獎金拿得最多。</p>
+        <p><strong>怎麼做：</strong>按「獎金 / 多繞的路」比值插入城市；插不進去就 2-opt 把路壓短再插。多輪重啟，每輪給獎金加不同噪聲。</p>
+        <p class="why"><strong>為什麼：</strong>500 座城，窮舉不可能；但「繞一點多拿很多」的貪心加壓路，能在 60 秒裡逼近參考解。</p>
+        <dl class="mini">
+          <div><dt>平均分</dt><dd class="num">0.865</dd></div>
+          <div><dt>最慢一次</dt><dd class="num">55.2s</dd></div>
+          <div class="strip"><dt>各實例</dt><dd class="mono">0.80 0.78 0.82 0.86 0.93 1.00</dd></div>
+        </dl>
+      </article>
+      <article class="card">
+        <div class="card-head">
+          <h3>OD 整數多商品流 <span class="slug mono">barnhart2000</span></h3>
+          <span class="badge ok">全部可行</span>
+        </div>
+        <p class="what">585 個商品各走一條不可拆的路，或退回人工弧（等於賠掉那筆收入）；弧有容量。</p>
+        <p><strong>怎麼做：</strong>最寬路徑貪心：每個商品挑「瓶頸容量最大」的路，而不是最短路——物理弧成本都是 0，最短路只會把貨堆在同一幾條弧上。</p>
+        <p class="why"><strong>為什麼：</strong>目標是「別賠錢」，所以排序用收入而不是流量；多種排序各跑一遍取最好。</p>
+        <dl class="mini">
+          <div><dt>平均分</dt><dd class="num">0.940</dd></div>
+          <div><dt>最慢一次</dt><dd class="num">9.8s</dd></div>
+          <div class="strip"><dt>各實例</dt><dd class="mono">0.92 0.91 0.93 0.96 0.92 1.00</dd></div>
+        </dl>
+      </article>
+      <article class="card">
+        <div class="card-head">
+          <h3>機組排班集合劃分 <span class="slug mono">hoffman1993</span></h3>
+          <span class="badge warn">4/6 可行</span>
+        </div>
+        <p class="what">100 段航班，15,000 個候選機組輪轉，每一段剛好被一個輪轉覆蓋，成本最小。</p>
+        <p><strong>怎麼做：</strong>三段：min-conflicts 找覆蓋 → 大鄰域（挑幾根已選輪轉，把那幾段航班重解一次）→ CP-SAT 帶提示再優化。</p>
+        <p class="why"><strong>為什麼：</strong>成本與長度無關（1–200 對 1–51 段），最優解是「很多很短」，而分支定界是從「很少很長」往下走——這就是它撞牆的原因。</p>
+        <dl class="mini">
+          <div><dt>平均分</dt><dd class="num">0.420</dd></div>
+          <div><dt>最慢一次</dt><dd class="num">55.1s</dd></div>
+          <div class="strip"><dt>各實例</dt><dd class="mono">0.31 1.00 0.21 0.00 0.00 1.00</dd></div>
+        </dl>
+      </article>
+      <article class="card">
+        <div class="card-head">
+          <h3>隨機容量選址 <span class="slug mono">bodur2017</span></h3>
+          <span class="badge ok">全部可行</span>
+        </div>
+        <p class="what">先決定開哪些倉（開倉費），再看 1,500 個需求情境各自怎麼送；總容量要撐得住最壞情境。</p>
+        <p><strong>怎麼做：</strong>開倉集合用「從全開往下刪」：每次刪一個最貴的，用抽樣情境估期望成本，容量撐得住且成本下降就刪。送貨用「最便宜配對先送」的貪心運輸。</p>
+        <p class="why"><strong>為什麼：</strong>每個情境都解一次 LP 放不進 60 秒；成本係數不隨情境變，所以配對順序只排一次。</p>
+        <dl class="mini">
+          <div><dt>平均分</dt><dd class="num">0.915</dd></div>
+          <div><dt>最慢一次</dt><dd class="num">15.8s</dd></div>
+          <div class="strip"><dt>各實例</dt><dd class="mono">0.89 0.88 0.90 0.99 0.98 0.85</dd></div>
+        </dl>
+      </article>
+      <article class="card">
+        <div class="card-head">
+          <h3>可分割收送的 VRP <span class="slug mono">nagy2015</span></h3>
+          <span class="badge ok">全部可行</span>
+        </div>
+        <p class="what">199 位顧客，送貨與取貨可以分兩趟做，但車上任何時刻的貨不能超過容量。</p>
+        <p><strong>怎麼做：</strong>把「送貨」與「取貨」當兩個獨立任務，Clarke-Wright 節約法在兩個容量預算下分組；每組先送後取、區塊內 2-opt，再用帶載重檢查的全序列 2-opt 收尾。</p>
+        <p class="why"><strong>為什麼：</strong>同一顧客的送與取可以拆開，這正是題目給的自由；把顧客綁在一起，set-3 上會多走 20%。</p>
+        <dl class="mini">
+          <div><dt>平均分</dt><dd class="num">0.942</dd></div>
+          <div><dt>最慢一次</dt><dd class="num">3.7s</dd></div>
+          <div class="strip"><dt>各實例</dt><dd class="mono">1.02 0.92 1.01 0.86 1.00 0.83</dd></div>
+        </dl>
+      </article>
+  </div>
+
+  <h2>撞牆的那一題</h2>
+  <p>集合劃分（<code>hoffman1993</code>）是唯一沒有全部拿下來的題。它其實是<b>兩種不同的難</b>，
+     分開看才說得通。</p>
+  <p><b>稀疏的那三個實例</b>（每個候選平均覆蓋 12.5 段）：成本 1–200 與長度<b>無關</b>，
+     所以最省錢的湊法偏向「很多很短的輪轉」。表裡那一輪交出來是 <b>2,117 / 27 根</b>，
+     另跑一次（<code>docs/logs/hoffman-large_instance_1.log</code>）是 <b>2,081 / 29 根</b>——
+     同一台機器兩次的差別來自 CP-SAT 的隨機種子。參考值 657（約 8 根），差 3 倍，
+     不是差幾個百分點。</p>
+  <p><b>稠密的兩個實例</b>（每個候選平均覆蓋 21.6 段）：100 段航班要剛好被約 5 個集合切開，
+     在 15,000 個候選裡是一個針尖。這兩個連<b>可行覆蓋</b>都找不到，
+     所以交出去的是空清單——是「沒解出來」，不是輸出格式壞了。</p>
+  <p>這兩件事同源：<b>成本與規模脫鉤時，CP-SAT 的搜索會沿著第一個可行解的形狀往下走，而那通常不是最優解的形狀。</b>
+     要改就得換搜索（例如先把「剛好覆蓋」鬆成允許重疊再修復，或給 CP-SAT 一個「短輪轉優先」的決策策略），
+     不是調時間。</p>
+  <p>沒有拿下來的實例：</p>
+  <ul><li><code>hoffman1993</code> / <code>large_instance_4</code>：60 秒內沒有找到覆蓋，solver 寫出空清單，檢查器因此判「缺少必要欄位」——是<b>沒解出來</b>，不是輸出格式壞了。</li><li><code>hoffman1993</code> / <code>large_instance_5</code>：60 秒內沒有找到覆蓋，solver 寫出空清單，檢查器因此判「缺少必要欄位」——是<b>沒解出來</b>，不是輸出格式壞了。</li></ul>
+
+  <h2>怎麼覆核</h2>
+  <p>下面每一行都能在乾淨 clone 上跑。檢查器是官方那一份，目標值另外用一份獨立算式重算，
+     分數按官方公式算。</p>
+  <pre>git clone https://github.com/hkmpn9s6dh-commits/hackathon-2026-frontieror.git
+cd hackathon-2026-frontieror
+python -m pip install ortools          # 只有 hoffman1993 需要
+python scripts/fetch_data.py          # 取 large 實例，按 sha256 校驗
+python harness/verify.py --tier tiny  # 只跑六個 tiny 實例，約 20 秒
+python harness/verify.py              # 全部 36 個實例
+python harness/build_submission.py    # 打包成 submission.zip（&lt; 4 MB）</pre>
+
+  <footer>
+    數據：<code>frontieror/FrontierOR</code>（Hugging Face，CC BY 4.0）· 題面與檢查器為原作者所有 ·
+    本頁由 <code>scripts/build_site.py</code> 從 <code>out/results.json</code> 生成，不聯外。
+  </footer>
+</div>
+</body>
+</html>
