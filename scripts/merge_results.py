@@ -61,7 +61,7 @@ def main() -> int:
         p["max_wall_s"] = max(p["max_wall_s"], row["wall_s"])
     for p in problems.values():
         p["mean_score"] = round(p.pop("_sum") / max(1, p["instances"]), 4)
-        p["max_wall_s"] = round(p["max_wall_s"], 2)
+        # keep the raw value: rounding twice made the card and the table disagree
 
     # AC-03 (the checker rejected the solution) is a *result*, not a defect: an
     # instance the solver cannot solve scores 0, and that is what the competition

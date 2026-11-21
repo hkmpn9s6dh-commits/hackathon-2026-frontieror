@@ -89,6 +89,10 @@
 - `AC-03/hoffman1993/large_instance_4`：checker rejected: empty required decision witness field(s): selected_rotations
 - `AC-03/hoffman1993/large_instance_5`：checker rejected: empty required decision witness field(s): selected_rotations
 
+## 3.5 失敗的證據
+
+`hoffman1993` 那兩個實例不是格式壞了，是 solver 在 60 秒內沒有找到覆蓋、寫出空的 `selected_rotations`。solver 自己的輸出留在 `docs/logs/hoffman-large_instance_4.log`：54.6 秒、最後一行 `hoffman: final 0 rotations, objective 0`。
+
 ## 4. 怎麼重跑
 
 ```sh

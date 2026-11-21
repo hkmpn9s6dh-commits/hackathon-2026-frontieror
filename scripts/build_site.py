@@ -66,8 +66,8 @@ PROSE = {
     "conclusion": "36 個實例裡 34 個拿到可行解；集合劃分有 2 個實例在 60 秒內找不到覆蓋。",
     "lede": "六個沒見過的運籌題，同一條生產線：讀 schema、選構造、自己判可行、自己決定什麼時候停。"
             "判分用官方檢查器。",
-    "ruler_note": "橫條＝那一題最慢一次的牆鐘；深色虛線是我們自設的 55 秒停止點（留 5 秒寫答案）；"
-                  "紅條＝這一題有實例沒解出來。條長不代表解好壞，右邊那列才是平均分。",
+    "ruler_note": "橫條＝那一題的平均分，虛線是 1.0（與參考相同）。右列是最慢一次的牆鐘，"
+                  "打 * 的表示撞到我們自設的 55 秒軟停止（留 5 秒寫答案）。紅條＝這一題有實例沒解出來。",
     "score_note": "分數照官方評分頁算：最小化題是「參考 ÷ 我們」，最大化題（本場的定向越野）反過來；"
                   "與參考相同得 1.000，比參考好最多到 2.000。這裡的參考值是<b>基準資料集</b>裡的 Gurobi 目標，"
                   "不是比賽後台凍結的參考值，所以它是估計，不是成績。",
@@ -102,43 +102,42 @@ def build() -> str:
     mean_score = data["mean_score"]
     max_wall = max(r["wall_s"] for r in rows) if rows else 0.0
 
-    # ---- the 60 s ruler
-    bar_h, gap, left, width = 18, 10, 150, 480
-    top = 20
+    # ---- the chart: score bars, with the slowest run beside them
+    bar_h, gap, left, width, top = 18, 10, 150, 420, 20
     total_h = top + len(order) * (bar_h + gap) + 34
-    ruler = [f'<svg viewBox="0 0 {left + width + 76} {total_h}" '
-             f'role="img" aria-label="每題最慢一次實例的牆鐘，虛線是自設的 55 秒停止點">']
-    stop = left + width * (55.0 / 60.0)
-    ruler.append(f'<line x1="{left + width}" y1="{top - 8}" x2="{left + width}" '
-                 f'y2="{top + len(order)*(bar_h+gap) + 4}" stroke="#b8b2a3" stroke-width="2"/>')
-    ruler.append(f'<line x1="{stop}" y1="{top - 8}" x2="{stop}" y2="{top + len(order)*(bar_h+gap) + 4}" '
+    scale = 1.2
+    chart = [f'<svg viewBox="0 0 {left + width + 96} {total_h}" '
+             f'role="img" aria-label="每題平均分（0 到 1.2，1.0 是參考），右列是最慢一次的牆鐘">']
+    ref_x = left + width * (1.0 / scale)
+    chart.append(f'<line x1="{ref_x}" y1="{top - 8}" x2="{ref_x}" y2="{top + len(order)*(bar_h+gap) + 4}" '
                  f'stroke="#3a3730" stroke-width="1.5" stroke-dasharray="4 4"/>')
-    ruler.append(f'<text x="{left + width}" y="{top + len(order)*(bar_h+gap)+20}" text-anchor="middle" '
-                 f'font-size="13" fill="#6b6659">60 s</text>')
-    ruler.append(f'<text x="{stop}" y="{top + len(order)*(bar_h+gap)+20}" text-anchor="middle" '
-                 f'font-size="12" fill="#3a3730">55 s</text>')
-    ruler.append(f'<text x="{left + width + 16}" y="{top - 8}" font-size="11" fill="#6b6659" '
-                 f'text-anchor="end">慢</text>')
-    ruler.append(f'<text x="{left + width + 62}" y="{top - 8}" font-size="11" fill="#6b6659" '
-                 f'text-anchor="end">平均分</text>')
-
+    chart.append(f'<line x1="{left}" y1="{top - 8}" x2="{left}" y2="{top + len(order)*(bar_h+gap) + 4}" '
+                 f'stroke="#d8d2c4" stroke-width="1"/>')
     for i, slug in enumerate(order):
         y = top + i * (bar_h + gap)
+        p = problems[slug]
         slowest = max((r["wall_s"] for r in rows if r["slug"] == slug), default=0.0)
-        length = min(1.0, slowest / 60.0) * width
-        score = problems[slug]["mean_score"]
-        incomplete = problems[slug]["feasible"] < problems[slug]["instances"]
+        incomplete = p["feasible"] < p["instances"]
         colour = "#b3271e" if incomplete else "#3a3730"
-        ruler.append(f'<text x="{left - 12}" y="{y + bar_h - 4}" text-anchor="end" font-size="15" fill="#16150f">'
-                     f'{esc(PROBLEMS[slug]["short"])}</text>')
-        ruler.append(f'<rect x="{left}" y="{y}" width="{width}" height="{bar_h}" fill="#eae5d8" rx="3"/>')
-        ruler.append(f'<rect x="{left}" y="{y}" width="{max(2, length):.1f}" height="{bar_h}" fill="{colour}" rx="3"/>')
-        ruler.append(f'<text x="{left + width + 16}" y="{y + bar_h - 4}" font-size="13" fill="#6b6659" '
-                     f'text-anchor="end">{slowest:.1f}s</text>')
-        ruler.append(f'<text x="{left + width + 62}" y="{y + bar_h - 4}" font-size="13" fill="#16150f" '
-                     f'text-anchor="end">{score:.2f}</text>')
-    ruler.append("</svg>")
-    ruler_svg = "".join(ruler)
+        length = max(2.0, min(scale, p["mean_score"]) / scale * width)
+        chart.append(f'<text x="{left - 12}" y="{y + bar_h - 4}" text-anchor="end" font-size="15" '
+                     f'fill="#16150f">{esc(PROBLEMS[slug]["short"])}</text>')
+        chart.append(f'<rect x="{left}" y="{y}" width="{width}" height="{bar_h}" fill="#eae5d8" rx="3"/>')
+        chart.append(f'<rect x="{left}" y="{y}" width="{length:.1f}" height="{bar_h}" fill="{colour}" rx="3"/>')
+        chart.append(f'<text x="{left + width + 12}" y="{y + bar_h - 4}" font-size="13" fill="#16150f">'
+                     f'{p["mean_score"]:.2f}</text>')
+        capped = slowest >= 54.0
+        chart.append(f'<text x="{left + width + 50}" y="{y + bar_h - 4}" font-size="12" '
+                     f'fill="{"#3a3730" if capped else "#6b6659"}"'
+                     f'{" font-weight=\"600\"" if capped else ""}>{slowest:.0f}s{"*" if capped else ""}</text>')
+    chart.append(f'<text x="{left + width + 12}" y="{top - 8}" font-size="11" fill="#6b6659">平均分</text>')
+    chart.append(f'<text x="{left + width + 50}" y="{top - 8}" font-size="11" fill="#6b6659">最慢</text>')
+    chart.append(f'<text x="{ref_x}" y="{top + len(order)*(bar_h+gap)+22}" text-anchor="middle" '
+                 f'font-size="12" fill="#3a3730">1.0 參考</text>')
+    chart.append(f'<text x="{left + width}" y="{top + len(order)*(bar_h+gap)+22}" text-anchor="end" '
+                 f'font-size="11" fill="#6b6659">1.2</text>')
+    chart.append("</svg>")
+    ruler_svg = "".join(chart)
 
     # ---- table
     table_rows = []
@@ -152,26 +151,15 @@ def build() -> str:
         for r in [x for x in rows if x["slug"] == slug]:
             bad = not r["feasible"]
             cls = ' class="bad"' if bad else ""
-            if bad:
-                note = "沒有解出來（記 0）"
-            else:
-                delta = (r["objective"] - r["reference_objective"]) / r["reference_objective"] * 100.0
-                if r["direction"] == "maximize":
-                    delta = -delta
-                ratio = (r["reference_objective"] / r["objective"]) if r["direction"] == "minimize" else (r["objective"] / r["reference_objective"])
-                if abs(delta) < 0.05:
-                    note = "與參考相同"
-                elif delta < 0:
-                    note = f"比參考好 {abs(delta):.1f}%"
-                elif delta > 100:
-                    note = f"是參考的 {ratio:.1f} 倍差"
-                else:
-                    note = f"比參考差 {delta:.1f}%"
+            ours = "—" if bad else fmt(r["objective"], 1)
+            ref = fmt(r["reference_objective"], 1)
+            name = r["instance"].replace("large_instance_", "L").replace("_instance", "")
             table_rows.append(
-                f'<tr{cls}><td class="mono">{esc(r["instance"])}</td>'
+                f'<tr{cls}><td class="mono">{esc(name)}</td>'
                 f'<td>{"可行" if r["feasible"] else "不可行"}</td>'
                 f'<td class="num">{fmt(r["score"])}</td>'
-                f'<td class="num">{r["wall_s"]:.1f}</td><td>{note}</td></tr>'
+                f'<td class="num">{ours}</td><td class="num">{ref}</td>'
+                f'<td class="num">{r["wall_s"]:.1f}</td></tr>'
             )
 
     # ---- per problem cards
@@ -231,6 +219,8 @@ def build() -> str:
   .statline {{ display: grid; grid-template-columns: 210px 1fr; gap: 32px; align-items: start; margin-top: 24px; }}
   .stat {{ font-size: 46px; line-height: 1.1; font-weight: 600; letter-spacing: -.02em; }}
   .stat small {{ display: block; font-size: 14px; font-weight: 400; color: var(--muted); letter-spacing: 0; margin-top: 8px; }}
+  .stat .tag {{ display: inline-block; font-size: 12px; font-weight: 500; color: #8a5a12;
+                background: #fbf0d8; border-radius: 3px; padding: 1px 6px; vertical-align: 12px; margin-left: 8px; }}
   .ruler {{ background: var(--card); border: 1px solid var(--line); border-radius: 6px; padding: 16px 20px 6px; }}
   .ruler svg {{ width: 100%; height: auto; display: block; }}
   .ruler .cap {{ font-size: 13px; color: var(--muted); margin: 6px 0 8px; }}
@@ -289,12 +279,12 @@ def build() -> str:
       <p class="cap">{esc(PROSE["ruler_note"])}</p>
     </div>
     <div class="statline">
-      <p class="stat">{feasible_rows}/{total_rows}
-        <small>個實例拿到可行解；平均分 {mean_score:.3f}（參考＝1.000）</small>
+      <p class="stat">{mean_score:.3f}<span class="tag">估算</span>
+        <small>六題平均分（參考＝1.000）；{feasible_rows}/{total_rows} 個實例拿到可行解</small>
       </p>
       <div>
-        <p>{esc(PROSE["conclusion"])} 最慢的一次用了 {max_wall:.1f} 秒，預算 60 秒；
-          {len(failed)} 個實例沒有拿到可行覆蓋。</p>
+        <p>{esc(PROSE["conclusion"])} 最慢的一次 55 秒上下就停手寫答案（預算 60 秒，
+         我們自留 5 秒）。</p>
         <p class="note">{PROSE["score_note"]}</p>
       </div>
     </div>
@@ -304,7 +294,8 @@ def build() -> str:
   <p class="how">每題的平均分＝該題所有實例分數的平均（不可行記 0）；總平均＝六題平均分再平均一次，
      所以每題等權，不因實例多而多重。比分數欄旁邊那列是「我們的值與參考值的差」，負號＝比參考好。</p>
   <table>
-    <thead><tr><th>實例</th><th>可行性</th><th class="num">分數</th><th class="num">耗時 (s)</th><th>與參考比</th></tr></thead>
+    <thead><tr><th>實例</th><th>可行性</th><th class="num">分數</th>
+      <th class="num">我們的值</th><th class="num">參考值</th><th class="num">耗時 (s)</th></tr></thead>
     <tbody>
       {''.join(table_rows)}
     </tbody>

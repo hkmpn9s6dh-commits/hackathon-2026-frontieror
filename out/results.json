@@ -14,37 +14,37 @@
   "barnhart2000": {
    "instances": 6,
    "feasible": 6,
-   "max_wall_s": 9.81,
+   "max_wall_s": 9.813,
    "mean_score": 0.9398
   },
   "bodur2017": {
    "instances": 6,
    "feasible": 6,
-   "max_wall_s": 15.84,
+   "max_wall_s": 15.842,
    "mean_score": 0.9153
   },
   "cordeau2006": {
    "instances": 6,
    "feasible": 6,
-   "max_wall_s": 42.85,
+   "max_wall_s": 42.849,
    "mean_score": 0.9643
   },
   "fischetti1998": {
    "instances": 6,
    "feasible": 6,
-   "max_wall_s": 55.22,
+   "max_wall_s": 55.217,
    "mean_score": 0.8645
   },
   "hoffman1993": {
    "instances": 6,
    "feasible": 4,
-   "max_wall_s": 55.07,
+   "max_wall_s": 55.073,
    "mean_score": 0.4205
   },
   "nagy2015": {
    "instances": 6,
    "feasible": 6,
-   "max_wall_s": 3.66,
+   "max_wall_s": 3.661,
    "mean_score": 0.9418
   }
  },

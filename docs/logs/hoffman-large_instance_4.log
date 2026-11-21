@@ -1,0 +1,10 @@
+{
+ "status": "ok",
+ "wall_s": 54.57,
+ "limit_s": 60,
+ "exit_code": 0,
+ "stdout_tail": "",
+ "stderr_tail": "hoffman: final 0 rotations, objective 0\n",
+ "solution_path": "C:\\Users\\张一\\AppData\\Local\\Temp\\fo-hoffman1993-k44ovq0e\\out\\solution.json",
+ "workdir": null
+}

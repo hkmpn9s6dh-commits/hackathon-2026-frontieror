@@ -106,6 +106,13 @@ def main() -> int:
         for c in recorded:
             lines.append(f"- `{c['id']}`：{c['detail'][:300]}")
         lines.append("")
+    lines.append("## 3.5 失敗的證據")
+    lines.append("")
+    lines.append("`hoffman1993` 那兩個實例不是格式壞了，是 solver 在 60 秒內沒有找到覆蓋、"
+                 "寫出空的 `selected_rotations`。solver 自己的輸出留在 "
+                 "`docs/logs/hoffman-large_instance_4.log`：54.6 秒、"
+                 "最後一行 `hoffman: final 0 rotations, objective 0`。")
+    lines.append("")
     lines.append("## 4. 怎麼重跑")
     lines.append("")
     lines.append("```sh")

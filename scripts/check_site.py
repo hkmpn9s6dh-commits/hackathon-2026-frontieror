@@ -59,8 +59,8 @@ def main() -> int:
             check(f"mean score {slug}", False, f'{p["mean_score"]:.3f}')
             break
 
-    # The 60 s ruler exists and its red line is not decorative.
-    check("ruler present", "60 s" in html and "aria-label" in html)
+    # The chart exists, is labelled for screen readers, and marks the 1.0 reference.
+    check("chart present", 'aria-label="每題平均分' in html and "1.0 參考" in html)
     check("no scroll container", "overflow-y: auto" not in html)
 
     failed = [c for c in checks if not c[1]]
