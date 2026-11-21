@@ -1,0 +1,246 @@
+{
+ "generated_by": "harness/verify.py",
+ "slugs": [
+  "cordeau2006"
+ ],
+ "time_limit_s": 60,
+ "tier": "all",
+ "problems": {
+  "cordeau2006": {
+   "instances": 6,
+   "feasible": 6,
+   "mean_score": 0.9643,
+   "max_wall_s": 42.849
+  }
+ },
+ "mean_score": 0.9643,
+ "rows": [
+  {
+   "slug": "cordeau2006",
+   "instance": "large_instance_1",
+   "tier": "large",
+   "run_status": "ok",
+   "wall_s": 23.013,
+   "reference_objective": 497.12603092861093,
+   "objective": 517.9178976189263,
+   "score": 0.9599,
+   "feasible": true,
+   "violations": [],
+   "computed_objective": 517.9178976189263,
+   "reported_objective": 517.9178976189262
+  },
+  {
+   "slug": "cordeau2006",
+   "instance": "large_instance_2",
+   "tier": "large",
+   "run_status": "ok",
+   "wall_s": 42.849,
+   "reference_objective": 329.5571891190125,
+   "objective": 342.69810056995186,
+   "score": 0.9617,
+   "feasible": true,
+   "violations": [],
+   "computed_objective": 342.69810056995186,
+   "reported_objective": 342.6981005699518
+  },
+  {
+   "slug": "cordeau2006",
+   "instance": "large_instance_3",
+   "tier": "large",
+   "run_status": "ok",
+   "wall_s": 26.558,
+   "reference_objective": 243.7504446741127,
+   "objective": 255.5428819780584,
+   "score": 0.9539,
+   "feasible": true,
+   "violations": [],
+   "computed_objective": 255.5428819780584,
+   "reported_objective": 255.54288197805843
+  },
+  {
+   "slug": "cordeau2006",
+   "instance": "large_instance_4",
+   "tier": "large",
+   "run_status": "ok",
+   "wall_s": 42.687,
+   "reference_objective": 508.6630294790415,
+   "objective": 527.858351055751,
+   "score": 0.9636,
+   "feasible": true,
+   "violations": [],
+   "computed_objective": 527.858351055751,
+   "reported_objective": 527.8583510557509
+  },
+  {
+   "slug": "cordeau2006",
+   "instance": "large_instance_5",
+   "tier": "large",
+   "run_status": "ok",
+   "wall_s": 1.778,
+   "reference_objective": 131.0897165456334,
+   "objective": 137.4938177639925,
+   "score": 0.9534,
+   "feasible": true,
+   "violations": [],
+   "computed_objective": 137.4938177639925,
+   "reported_objective": 137.49381776399247
+  },
+  {
+   "slug": "cordeau2006",
+   "instance": "tiny_instance",
+   "tier": "tiny",
+   "run_status": "ok",
+   "wall_s": 5.06,
+   "reference_objective": 313.18494346405316,
+   "objective": 315.3019559445349,
+   "score": 0.9933,
+   "feasible": true,
+   "violations": [],
+   "computed_objective": 315.3019559445349,
+   "reported_objective": 315.30195594453494
+  }
+ ],
+ "checks": [
+  {
+   "id": "AC-01/cordeau2006/large_instance_1",
+   "ok": true,
+   "detail": "exit 0 in 23.013s (limit 60s)"
+  },
+  {
+   "id": "AC-02/cordeau2006/large_instance_1",
+   "ok": true,
+   "detail": "finished inside the limit (23.013s < 60s)"
+  },
+  {
+   "id": "AC-03/cordeau2006/large_instance_1",
+   "ok": true,
+   "detail": "checker: feasible"
+  },
+  {
+   "id": "AC-04/cordeau2006/large_instance_1",
+   "ok": true,
+   "detail": "reported 517.9178976189262 vs independently recomputed 517.9178976189263"
+  },
+  {
+   "id": "AC-01/cordeau2006/large_instance_2",
+   "ok": true,
+   "detail": "exit 0 in 42.849s (limit 60s)"
+  },
+  {
+   "id": "AC-02/cordeau2006/large_instance_2",
+   "ok": true,
+   "detail": "finished inside the limit (42.849s < 60s)"
+  },
+  {
+   "id": "AC-03/cordeau2006/large_instance_2",
+   "ok": true,
+   "detail": "checker: feasible"
+  },
+  {
+   "id": "AC-04/cordeau2006/large_instance_2",
+   "ok": true,
+   "detail": "reported 342.6981005699518 vs independently recomputed 342.69810056995186"
+  },
+  {
+   "id": "AC-01/cordeau2006/large_instance_3",
+   "ok": true,
+   "detail": "exit 0 in 26.558s (limit 60s)"
+  },
+  {
+   "id": "AC-02/cordeau2006/large_instance_3",
+   "ok": true,
+   "detail": "finished inside the limit (26.558s < 60s)"
+  },
+  {
+   "id": "AC-03/cordeau2006/large_instance_3",
+   "ok": true,
+   "detail": "checker: feasible"
+  },
+  {
+   "id": "AC-04/cordeau2006/large_instance_3",
+   "ok": true,
+   "detail": "reported 255.54288197805843 vs independently recomputed 255.5428819780584"
+  },
+  {
+   "id": "AC-01/cordeau2006/large_instance_4",
+   "ok": true,
+   "detail": "exit 0 in 42.687s (limit 60s)"
+  },
+  {
+   "id": "AC-02/cordeau2006/large_instance_4",
+   "ok": true,
+   "detail": "finished inside the limit (42.687s < 60s)"
+  },
+  {
+   "id": "AC-03/cordeau2006/large_instance_4",
+   "ok": true,
+   "detail": "checker: feasible"
+  },
+  {
+   "id": "AC-04/cordeau2006/large_instance_4",
+   "ok": true,
+   "detail": "reported 527.8583510557509 vs independently recomputed 527.858351055751"
+  },
+  {
+   "id": "AC-01/cordeau2006/large_instance_5",
+   "ok": true,
+   "detail": "exit 0 in 1.778s (limit 60s)"
+  },
+  {
+   "id": "AC-02/cordeau2006/large_instance_5",
+   "ok": true,
+   "detail": "finished inside the limit (1.778s < 60s)"
+  },
+  {
+   "id": "AC-03/cordeau2006/large_instance_5",
+   "ok": true,
+   "detail": "checker: feasible"
+  },
+  {
+   "id": "AC-04/cordeau2006/large_instance_5",
+   "ok": true,
+   "detail": "reported 137.49381776399247 vs independently recomputed 137.4938177639925"
+  },
+  {
+   "id": "AC-01/cordeau2006/tiny_instance",
+   "ok": true,
+   "detail": "exit 0 in 5.06s (limit 60s)"
+  },
+  {
+   "id": "AC-02/cordeau2006/tiny_instance",
+   "ok": true,
+   "detail": "finished inside the limit (5.06s < 60s)"
+  },
+  {
+   "id": "AC-03/cordeau2006/tiny_instance",
+   "ok": true,
+   "detail": "checker: feasible"
+  },
+  {
+   "id": "AC-04/cordeau2006/tiny_instance",
+   "ok": true,
+   "detail": "reported 315.30195594453494 vs independently recomputed 315.3019559445349"
+  },
+  {
+   "id": "AC-05/cordeau2006",
+   "ok": true,
+   "detail": "staged <slug>/solve.py present"
+  },
+  {
+   "id": "AC-06/cordeau2006",
+   "ok": true,
+   "detail": "no network imports"
+  },
+  {
+   "id": "AC-07/archive",
+   "ok": true,
+   "detail": "submission archive 24 KiB <= 4096 KiB"
+  },
+  {
+   "id": "AC-08/manifest",
+   "ok": true,
+   "detail": "benchmark/instances.json lists every instance with a sha256 and a reference objective"
+  }
+ ],
+ "failed": []
+}

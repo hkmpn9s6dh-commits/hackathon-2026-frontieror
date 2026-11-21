@@ -1,0 +1,20 @@
+{
+ "large_instance_1": {
+  "objective": 63727.52657900184
+ },
+ "large_instance_2": {
+  "objective": 54529.76190944668
+ },
+ "large_instance_3": {
+  "objective": 48283.70849064936
+ },
+ "large_instance_4": {
+  "objective": 48495.883382629
+ },
+ "large_instance_5": {
+  "objective": 50576.02091634332
+ },
+ "tiny_instance": {
+  "objective": 74706.08988139468
+ }
+}

@@ -1,0 +1,290 @@
+[
+ {
+  "slug": "cordeau2006",
+  "name": "large_instance_1",
+  "size": 22553,
+  "sha256": "e201c205b0c534a085c6b5f17cfd1b8c0ce58b8182e0f61d09bad80f2d14e6dc",
+  "reference_objective": 497.12603092861093,
+  "tier": "large"
+ },
+ {
+  "slug": "cordeau2006",
+  "name": "large_instance_2",
+  "size": 22558,
+  "sha256": "ba7fff30e4f3da3821333708f77698625c4b039ff2d7aa7cdeff82ddff625d28",
+  "reference_objective": 329.5571891190125,
+  "tier": "large"
+ },
+ {
+  "slug": "cordeau2006",
+  "name": "large_instance_3",
+  "size": 22225,
+  "sha256": "69670442e3f9f4d416c8bd63100a649505816cca7e4566db6cb81ccbd29ef679",
+  "reference_objective": 243.7504446741127,
+  "tier": "large"
+ },
+ {
+  "slug": "cordeau2006",
+  "name": "large_instance_4",
+  "size": 22539,
+  "sha256": "fcf601ea11208a992fc01f3663b032b1d970a5df4afcef878e692c94fa67bdf4",
+  "reference_objective": 508.6630294790415,
+  "tier": "large"
+ },
+ {
+  "slug": "cordeau2006",
+  "name": "large_instance_5",
+  "size": 10543,
+  "sha256": "95d7323393b34bed49ac03905b01ea500f314452862f097f9dbb799879be6ec0",
+  "reference_objective": 131.0897165456334,
+  "tier": "large"
+ },
+ {
+  "slug": "cordeau2006",
+  "name": "tiny_instance",
+  "size": 10978,
+  "sha256": "3e9d4ea8891848e9d987e3c402814820d6b603b3d7c586a6a3c37cb60c470b62",
+  "reference_objective": 313.18494346405316,
+  "tier": "tiny"
+ },
+ {
+  "slug": "fischetti1998",
+  "name": "large_instance_1",
+  "size": 2449261,
+  "sha256": "f0dd551a424b06fd38238088bb426b766a9b430e014ac247461522cc67347047",
+  "reference_objective": 17388.0,
+  "tier": "large"
+ },
+ {
+  "slug": "fischetti1998",
+  "name": "large_instance_2",
+  "size": 2449278,
+  "sha256": "4c588cdfbfe4211773741576130283ce5f9aee92a92e6742482b69942b98a481",
+  "reference_objective": 9528.0,
+  "tier": "large"
+ },
+ {
+  "slug": "fischetti1998",
+  "name": "large_instance_3",
+  "size": 2449283,
+  "sha256": "a464e5a080d4766bffef8bf69d647f833d920bab2f886f62ce947b99d35807b4",
+  "reference_objective": 20169.0,
+  "tier": "large"
+ },
+ {
+  "slug": "fischetti1998",
+  "name": "large_instance_4",
+  "size": 2449283,
+  "sha256": "bda2e933a0b509792643febcc0cd606efbfbc1a1f2f6cff0539cd9483bacf484",
+  "reference_objective": 23368.0,
+  "tier": "large"
+ },
+ {
+  "slug": "fischetti1998",
+  "name": "large_instance_5",
+  "size": 2449283,
+  "sha256": "f37adbc41e8a3be6f4e075f22af1d9115c55f6650b2c3678ce2a7ee835fac70a",
+  "reference_objective": 25982.0,
+  "tier": "large"
+ },
+ {
+  "slug": "fischetti1998",
+  "name": "tiny_instance",
+  "size": 6938,
+  "sha256": "36980652d6ed548c09b10ebbb75211735dcff13a2d1cd3ccc9253b8320b64e5d",
+  "reference_objective": 287.0,
+  "tier": "tiny"
+ },
+ {
+  "slug": "barnhart2000",
+  "name": "large_instance_1",
+  "size": 117848,
+  "sha256": "c8956f449a47a159bed55b94635f62c734b9c2be0496d7455a68a23e68fc1c52",
+  "reference_objective": 4951.0,
+  "tier": "large"
+ },
+ {
+  "slug": "barnhart2000",
+  "name": "large_instance_2",
+  "size": 117871,
+  "sha256": "f82d1f2fec0b72b980d1499dfa5bea04efd81833831be4d07ebc443d0b3ef98d",
+  "reference_objective": 4368.0,
+  "tier": "large"
+ },
+ {
+  "slug": "barnhart2000",
+  "name": "large_instance_3",
+  "size": 117789,
+  "sha256": "809b0f291161f27cf36da2f37ec275487ebf3761bd5cc978a8732858d80d5d96",
+  "reference_objective": 4771.0,
+  "tier": "large"
+ },
+ {
+  "slug": "barnhart2000",
+  "name": "large_instance_4",
+  "size": 117833,
+  "sha256": "192cabc44d8af2c14f37f65fc3db8e1d178efdd6ce31b02b4d7398371cccd6ef",
+  "reference_objective": 5180.0,
+  "tier": "large"
+ },
+ {
+  "slug": "barnhart2000",
+  "name": "large_instance_5",
+  "size": 117828,
+  "sha256": "8edd9796644c92ff067fe439db6d9a0aa59ab5a59e3acb0869fc9e0343713414",
+  "reference_objective": 4761.0,
+  "tier": "large"
+ },
+ {
+  "slug": "barnhart2000",
+  "name": "tiny_instance",
+  "size": 6957,
+  "sha256": "483f7ac69127be4feb8faad5ffa5f63d3687d3480c392a33f36b6f11e0600835",
+  "reference_objective": 64.0,
+  "tier": "tiny"
+ },
+ {
+  "slug": "hoffman1993",
+  "name": "large_instance_1",
+  "size": 2602564,
+  "sha256": "75d8c9bb2eee959abf1cf0d6c4eb993346916d4f3b0fa1b8c85b747d35852ceb",
+  "reference_objective": 657.0,
+  "tier": "large"
+ },
+ {
+  "slug": "hoffman1993",
+  "name": "large_instance_2",
+  "size": 579763,
+  "sha256": "32cd2a199670ca0bf38c540f0f6b9d0453b942147e7edda2dcb58fb06aa6b0ab",
+  "reference_objective": 229.0,
+  "tier": "large"
+ },
+ {
+  "slug": "hoffman1993",
+  "name": "large_instance_3",
+  "size": 1171365,
+  "sha256": "a742ddd66d78d7a3412237f51398c29a3eb5e28eb6d2d1b1724cfac78ff1c762",
+  "reference_objective": 207.0,
+  "tier": "large"
+ },
+ {
+  "slug": "hoffman1993",
+  "name": "large_instance_4",
+  "size": 4219379,
+  "sha256": "851a40e1bf3ee8f8ca49dbef89ce7326a65fa98ff2609eb4a0847f084e3b1c1a",
+  "reference_objective": 331.0,
+  "tier": "large"
+ },
+ {
+  "slug": "hoffman1993",
+  "name": "large_instance_5",
+  "size": 6514338,
+  "sha256": "f97145a9dd23e29efa2bdbde32694e0af137a4e86e20ef6ead7333daea63c29b",
+  "reference_objective": 180.0,
+  "tier": "large"
+ },
+ {
+  "slug": "hoffman1993",
+  "name": "tiny_instance",
+  "size": 3078,
+  "sha256": "5bf883165945600510cba1b218ba49b3ffe2e7bd432cf9706cd4940e73b01c35",
+  "reference_objective": 16.0,
+  "tier": "tiny"
+ },
+ {
+  "slug": "bodur2017",
+  "name": "large_instance_1",
+  "size": 2281278,
+  "sha256": "0153dd4dc3a60cebb5c1fa8236892d19d97eab7681a7de2fadf33c69afe4bbdc",
+  "reference_objective": 63727.52657900184,
+  "tier": "large"
+ },
+ {
+  "slug": "bodur2017",
+  "name": "large_instance_2",
+  "size": 2279897,
+  "sha256": "1c5a96428ff72dc805d415c17174be10adc2b562bfe92654b829dd03d905f1a4",
+  "reference_objective": 54529.76190944668,
+  "tier": "large"
+ },
+ {
+  "slug": "bodur2017",
+  "name": "large_instance_3",
+  "size": 2275487,
+  "sha256": "207900ae51c7702c38aa589bc725212e66aa8499378920f38a5c45a151c59cfc",
+  "reference_objective": 48283.70849064936,
+  "tier": "large"
+ },
+ {
+  "slug": "bodur2017",
+  "name": "large_instance_4",
+  "size": 2290630,
+  "sha256": "617fe58d66108e7777998d52a1cdc061b03fb12944fae67783ffa7e03eeae318",
+  "reference_objective": 48495.883382629,
+  "tier": "large"
+ },
+ {
+  "slug": "bodur2017",
+  "name": "large_instance_5",
+  "size": 2282657,
+  "sha256": "e8f95baba30083f3c9de0a1880b2dd90ab15f7aa16e8269f54f208fc7952db76",
+  "reference_objective": 50576.02091634332,
+  "tier": "large"
+ },
+ {
+  "slug": "bodur2017",
+  "name": "tiny_instance",
+  "size": 409993,
+  "sha256": "cf74a4525c390d9998703c659cc5cfa043677d9271cf7dd0264fec8762fd7e37",
+  "reference_objective": 74706.08988139468,
+  "tier": "tiny"
+ },
+ {
+  "slug": "nagy2015",
+  "name": "large_instance_1",
+  "size": 426077,
+  "sha256": "0022b7919ad50ed999a388fb330a5e8dce1451536157a3e73095911d3556cffb",
+  "reference_objective": 13986.0,
+  "tier": "large"
+ },
+ {
+  "slug": "nagy2015",
+  "name": "large_instance_2",
+  "size": 425878,
+  "sha256": "4961384e34ed8d877ccf0124065739240400e72948521eb54ee12be5f465e01f",
+  "reference_objective": 3652.0,
+  "tier": "large"
+ },
+ {
+  "slug": "nagy2015",
+  "name": "large_instance_3",
+  "size": 426212,
+  "sha256": "5a6700b33cb373a106af5b57c7445dee6ec3dd12b6515ddb5b83c0e394531018",
+  "reference_objective": 13361.0,
+  "tier": "large"
+ },
+ {
+  "slug": "nagy2015",
+  "name": "large_instance_4",
+  "size": 426199,
+  "sha256": "0f8ed3143c06d30519a4e470fa43e268b13857b877ea61e356244b21c8e540ff",
+  "reference_objective": 3423.0,
+  "tier": "large"
+ },
+ {
+  "slug": "nagy2015",
+  "name": "large_instance_5",
+  "size": 426467,
+  "sha256": "930b88455361da50985c16c8d29775bb280b1230406d203e11bc242aedd89701",
+  "reference_objective": 13762.0,
+  "tier": "large"
+ },
+ {
+  "slug": "nagy2015",
+  "name": "tiny_instance",
+  "size": 3589,
+  "sha256": "ded205b0a721dc2979bd354430dc2a015753ad8b1fe398c81393bf220dd8ffcc",
+  "reference_objective": 948.0,
+  "tier": "tiny"
+ }
+]

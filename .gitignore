@@ -1,0 +1,9 @@
+data/benchmark/
+data/large/
+solvers/*/orlib.py
+__pycache__/
+*.pyc
+submission*.zip
+runs/
+out/*.tmp
+_*

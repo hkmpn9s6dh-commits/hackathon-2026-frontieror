@@ -1,0 +1,20 @@
+{
+ "large_instance_1": {
+  "objective": 657.0
+ },
+ "large_instance_2": {
+  "objective": 229.0
+ },
+ "large_instance_3": {
+  "objective": 207.0
+ },
+ "large_instance_4": {
+  "objective": 331.0
+ },
+ "large_instance_5": {
+  "objective": 180.0
+ },
+ "tiny_instance": {
+  "objective": 16.0
+ }
+}

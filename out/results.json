@@ -1,0 +1,1407 @@
+{
+ "generated_by": "harness/verify.py (per problem) + scripts/merge_results.py",
+ "time_limit_s": 60,
+ "tier": "all",
+ "slugs": [
+  "barnhart2000",
+  "bodur2017",
+  "cordeau2006",
+  "fischetti1998",
+  "hoffman1993",
+  "nagy2015"
+ ],
+ "problems": {
+  "barnhart2000": {
+   "instances": 6,
+   "feasible": 6,
+   "max_wall_s": 9.81,
+   "mean_score": 0.9398
+  },
+  "bodur2017": {
+   "instances": 6,
+   "feasible": 6,
+   "max_wall_s": 15.84,
+   "mean_score": 0.9153
+  },
+  "cordeau2006": {
+   "instances": 6,
+   "feasible": 6,
+   "max_wall_s": 42.85,
+   "mean_score": 0.9643
+  },
+  "fischetti1998": {
+   "instances": 6,
+   "feasible": 6,
+   "max_wall_s": 55.22,
+   "mean_score": 1.1656
+  },
+  "hoffman1993": {
+   "instances": 6,
+   "feasible": 4,
+   "max_wall_s": 55.07,
+   "mean_score": 0.4205
+  },
+  "nagy2015": {
+   "instances": 6,
+   "feasible": 6,
+   "max_wall_s": 3.66,
+   "mean_score": 0.9418
+  }
+ },
+ "mean_score": 0.8912,
+ "rows": [
+  {
+   "slug": "barnhart2000",
+   "instance": "large_instance_1",
+   "tier": "large",
+   "run_status": "ok",
+   "wall_s": 7.344,
+   "reference_objective": 4951.0,
+   "objective": 5401.0,
+   "score": 0.9167,
+   "feasible": true,
+   "violations": [],
+   "computed_objective": 5401.0,
+   "reported_objective": 5401.0
+  },
+  {
+   "slug": "barnhart2000",
+   "instance": "large_instance_2",
+   "tier": "large",
+   "run_status": "ok",
+   "wall_s": 8.496,
+   "reference_objective": 4368.0,
+   "objective": 4796.0,
+   "score": 0.9108,
+   "feasible": true,
+   "violations": [],
+   "computed_objective": 4796.0,
+   "reported_objective": 4796.0
+  },
+  {
+   "slug": "barnhart2000",
+   "instance": "large_instance_3",
+   "tier": "large",
+   "run_status": "ok",
+   "wall_s": 9.813,
+   "reference_objective": 4771.0,
+   "objective": 5143.0,
+   "score": 0.9277,
+   "feasible": true,
+   "violations": [],
+   "computed_objective": 5143.0,
+   "reported_objective": 5143.0
+  },
+  {
+   "slug": "barnhart2000",
+   "instance": "large_instance_4",
+   "tier": "large",
+   "run_status": "ok",
+   "wall_s": 7.633,
+   "reference_objective": 5180.0,
+   "objective": 5402.0,
+   "score": 0.9589,
+   "feasible": true,
+   "violations": [],
+   "computed_objective": 5402.0,
+   "reported_objective": 5402.0
+  },
+  {
+   "slug": "barnhart2000",
+   "instance": "large_instance_5",
+   "tier": "large",
+   "run_status": "ok",
+   "wall_s": 7.143,
+   "reference_objective": 4761.0,
+   "objective": 5150.0,
+   "score": 0.9245,
+   "feasible": true,
+   "violations": [],
+   "computed_objective": 5150.0,
+   "reported_objective": 5150.0
+  },
+  {
+   "slug": "barnhart2000",
+   "instance": "tiny_instance",
+   "tier": "tiny",
+   "run_status": "ok",
+   "wall_s": 0.651,
+   "reference_objective": 64.0,
+   "objective": 64.0,
+   "score": 1.0,
+   "feasible": true,
+   "violations": [],
+   "computed_objective": 64.0,
+   "reported_objective": 64.0
+  },
+  {
+   "slug": "bodur2017",
+   "instance": "large_instance_1",
+   "tier": "large",
+   "run_status": "ok",
+   "wall_s": 11.532,
+   "reference_objective": 63727.52657900184,
+   "objective": 71434.01615555266,
+   "score": 0.8921,
+   "feasible": true,
+   "violations": [],
+   "computed_objective": 71434.01615555266,
+   "reported_objective": 71434.01615555266
+  },
+  {
+   "slug": "bodur2017",
+   "instance": "large_instance_2",
+   "tier": "large",
+   "run_status": "ok",
+   "wall_s": 6.047,
+   "reference_objective": 54529.76190944668,
+   "objective": 61838.58106354389,
+   "score": 0.8818,
+   "feasible": true,
+   "violations": [],
+   "computed_objective": 61838.58106354389,
+   "reported_objective": 61838.58106354389
+  },
+  {
+   "slug": "bodur2017",
+   "instance": "large_instance_3",
+   "tier": "large",
+   "run_status": "ok",
+   "wall_s": 3.186,
+   "reference_objective": 48283.70849064936,
+   "objective": 53429.52539574546,
+   "score": 0.9037,
+   "feasible": true,
+   "violations": [],
+   "computed_objective": 53429.52539574546,
+   "reported_objective": 53429.52539574545
+  },
+  {
+   "slug": "bodur2017",
+   "instance": "large_instance_4",
+   "tier": "large",
+   "run_status": "ok",
+   "wall_s": 15.036,
+   "reference_objective": 48495.883382629,
+   "objective": 49196.960875364384,
+   "score": 0.9857,
+   "feasible": true,
+   "violations": [],
+   "computed_objective": 49196.960875364384,
+   "reported_objective": 49196.960875364384
+  },
+  {
+   "slug": "bodur2017",
+   "instance": "large_instance_5",
+   "tier": "large",
+   "run_status": "ok",
+   "wall_s": 15.842,
+   "reference_objective": 50576.02091634332,
+   "objective": 51655.75969206902,
+   "score": 0.9791,
+   "feasible": true,
+   "violations": [],
+   "computed_objective": 51655.75969206902,
+   "reported_objective": 51655.75969206903
+  },
+  {
+   "slug": "bodur2017",
+   "instance": "tiny_instance",
+   "tier": "tiny",
+   "run_status": "ok",
+   "wall_s": 1.167,
+   "reference_objective": 74706.08988139468,
+   "objective": 87943.12783271771,
+   "score": 0.8495,
+   "feasible": true,
+   "violations": [],
+   "computed_objective": 87943.12783271771,
+   "reported_objective": 87943.12783271771
+  },
+  {
+   "slug": "cordeau2006",
+   "instance": "large_instance_1",
+   "tier": "large",
+   "run_status": "ok",
+   "wall_s": 23.013,
+   "reference_objective": 497.12603092861093,
+   "objective": 517.9178976189263,
+   "score": 0.9599,
+   "feasible": true,
+   "violations": [],
+   "computed_objective": 517.9178976189263,
+   "reported_objective": 517.9178976189262
+  },
+  {
+   "slug": "cordeau2006",
+   "instance": "large_instance_2",
+   "tier": "large",
+   "run_status": "ok",
+   "wall_s": 42.849,
+   "reference_objective": 329.5571891190125,
+   "objective": 342.69810056995186,
+   "score": 0.9617,
+   "feasible": true,
+   "violations": [],
+   "computed_objective": 342.69810056995186,
+   "reported_objective": 342.6981005699518
+  },
+  {
+   "slug": "cordeau2006",
+   "instance": "large_instance_3",
+   "tier": "large",
+   "run_status": "ok",
+   "wall_s": 26.558,
+   "reference_objective": 243.7504446741127,
+   "objective": 255.5428819780584,
+   "score": 0.9539,
+   "feasible": true,
+   "violations": [],
+   "computed_objective": 255.5428819780584,
+   "reported_objective": 255.54288197805843
+  },
+  {
+   "slug": "cordeau2006",
+   "instance": "large_instance_4",
+   "tier": "large",
+   "run_status": "ok",
+   "wall_s": 42.687,
+   "reference_objective": 508.6630294790415,
+   "objective": 527.858351055751,
+   "score": 0.9636,
+   "feasible": true,
+   "violations": [],
+   "computed_objective": 527.858351055751,
+   "reported_objective": 527.8583510557509
+  },
+  {
+   "slug": "cordeau2006",
+   "instance": "large_instance_5",
+   "tier": "large",
+   "run_status": "ok",
+   "wall_s": 1.778,
+   "reference_objective": 131.0897165456334,
+   "objective": 137.4938177639925,
+   "score": 0.9534,
+   "feasible": true,
+   "violations": [],
+   "computed_objective": 137.4938177639925,
+   "reported_objective": 137.49381776399247
+  },
+  {
+   "slug": "cordeau2006",
+   "instance": "tiny_instance",
+   "tier": "tiny",
+   "run_status": "ok",
+   "wall_s": 5.06,
+   "reference_objective": 313.18494346405316,
+   "objective": 315.3019559445349,
+   "score": 0.9933,
+   "feasible": true,
+   "violations": [],
+   "computed_objective": 315.3019559445349,
+   "reported_objective": 315.30195594453494
+  },
+  {
+   "slug": "fischetti1998",
+   "instance": "large_instance_1",
+   "tier": "large",
+   "run_status": "ok",
+   "wall_s": 51.733,
+   "reference_objective": 17388.0,
+   "objective": 13925.0,
+   "score": 1.2487,
+   "feasible": true,
+   "violations": [],
+   "computed_objective": 13925.0,
+   "reported_objective": 13925.0
+  },
+  {
+   "slug": "fischetti1998",
+   "instance": "large_instance_2",
+   "tier": "large",
+   "run_status": "ok",
+   "wall_s": 14.94,
+   "reference_objective": 9528.0,
+   "objective": 7421.0,
+   "score": 1.2839,
+   "feasible": true,
+   "violations": [],
+   "computed_objective": 7421.0,
+   "reported_objective": 7421.0
+  },
+  {
+   "slug": "fischetti1998",
+   "instance": "large_instance_3",
+   "tier": "large",
+   "run_status": "ok",
+   "wall_s": 55.217,
+   "reference_objective": 20169.0,
+   "objective": 16524.0,
+   "score": 1.2206,
+   "feasible": true,
+   "violations": [],
+   "computed_objective": 16524.0,
+   "reported_objective": 16524.0
+  },
+  {
+   "slug": "fischetti1998",
+   "instance": "large_instance_4",
+   "tier": "large",
+   "run_status": "ok",
+   "wall_s": 55.208,
+   "reference_objective": 23368.0,
+   "objective": 20079.0,
+   "score": 1.1638,
+   "feasible": true,
+   "violations": [],
+   "computed_objective": 20079.0,
+   "reported_objective": 20079.0
+  },
+  {
+   "slug": "fischetti1998",
+   "instance": "large_instance_5",
+   "tier": "large",
+   "run_status": "ok",
+   "wall_s": 55.209,
+   "reference_objective": 25982.0,
+   "objective": 24131.0,
+   "score": 1.0767,
+   "feasible": true,
+   "violations": [],
+   "computed_objective": 24131.0,
+   "reported_objective": 24131.0
+  },
+  {
+   "slug": "fischetti1998",
+   "instance": "tiny_instance",
+   "tier": "tiny",
+   "run_status": "ok",
+   "wall_s": 0.173,
+   "reference_objective": 287.0,
+   "objective": 287.0,
+   "score": 1.0,
+   "feasible": true,
+   "violations": [],
+   "computed_objective": 287.0,
+   "reported_objective": 287.0
+  },
+  {
+   "slug": "hoffman1993",
+   "instance": "large_instance_1",
+   "tier": "large",
+   "run_status": "ok",
+   "wall_s": 54.948,
+   "reference_objective": 657.0,
+   "objective": 2117.0,
+   "score": 0.3103,
+   "feasible": true,
+   "violations": [],
+   "computed_objective": 2117.0,
+   "reported_objective": 2117.0
+  },
+  {
+   "slug": "hoffman1993",
+   "instance": "large_instance_2",
+   "tier": "large",
+   "run_status": "ok",
+   "wall_s": 1.447,
+   "reference_objective": 229.0,
+   "objective": 229.0,
+   "score": 1.0,
+   "feasible": true,
+   "violations": [],
+   "computed_objective": 229.0,
+   "reported_objective": 229.0
+  },
+  {
+   "slug": "hoffman1993",
+   "instance": "large_instance_3",
+   "tier": "large",
+   "run_status": "ok",
+   "wall_s": 54.306,
+   "reference_objective": 207.0,
+   "objective": 973.0,
+   "score": 0.2127,
+   "feasible": true,
+   "violations": [],
+   "computed_objective": 973.0,
+   "reported_objective": 973.0
+  },
+  {
+   "slug": "hoffman1993",
+   "instance": "large_instance_4",
+   "tier": "large",
+   "run_status": "ok",
+   "wall_s": 54.797,
+   "reference_objective": 331.0,
+   "objective": 0.0,
+   "score": 0.0,
+   "feasible": false,
+   "violations": [
+    "empty required decision witness field(s): selected_rotations"
+   ],
+   "computed_objective": 0.0,
+   "reported_objective": 0.0
+  },
+  {
+   "slug": "hoffman1993",
+   "instance": "large_instance_5",
+   "tier": "large",
+   "run_status": "ok",
+   "wall_s": 55.073,
+   "reference_objective": 180.0,
+   "objective": 0.0,
+   "score": 0.0,
+   "feasible": false,
+   "violations": [
+    "empty required decision witness field(s): selected_rotations"
+   ],
+   "computed_objective": 0.0,
+   "reported_objective": 0.0
+  },
+  {
+   "slug": "hoffman1993",
+   "instance": "tiny_instance",
+   "tier": "tiny",
+   "run_status": "ok",
+   "wall_s": 0.979,
+   "reference_objective": 16.0,
+   "objective": 16.0,
+   "score": 1.0,
+   "feasible": true,
+   "violations": [],
+   "computed_objective": 16.0,
+   "reported_objective": 16.0
+  },
+  {
+   "slug": "nagy2015",
+   "instance": "large_instance_1",
+   "tier": "large",
+   "run_status": "ok",
+   "wall_s": 1.131,
+   "reference_objective": 13986.0,
+   "objective": 13711.0,
+   "score": 1.0201,
+   "feasible": true,
+   "violations": [],
+   "computed_objective": 13711.0,
+   "reported_objective": 13711.0
+  },
+  {
+   "slug": "nagy2015",
+   "instance": "large_instance_2",
+   "tier": "large",
+   "run_status": "ok",
+   "wall_s": 3.661,
+   "reference_objective": 3652.0,
+   "objective": 3963.0,
+   "score": 0.9215,
+   "feasible": true,
+   "violations": [],
+   "computed_objective": 3963.0,
+   "reported_objective": 3963.0
+  },
+  {
+   "slug": "nagy2015",
+   "instance": "large_instance_3",
+   "tier": "large",
+   "run_status": "ok",
+   "wall_s": 0.73,
+   "reference_objective": 13361.0,
+   "objective": 13202.0,
+   "score": 1.012,
+   "feasible": true,
+   "violations": [],
+   "computed_objective": 13202.0,
+   "reported_objective": 13202.0
+  },
+  {
+   "slug": "nagy2015",
+   "instance": "large_instance_4",
+   "tier": "large",
+   "run_status": "ok",
+   "wall_s": 2.674,
+   "reference_objective": 3423.0,
+   "objective": 3963.0,
+   "score": 0.8637,
+   "feasible": true,
+   "violations": [],
+   "computed_objective": 3963.0,
+   "reported_objective": 3963.0
+  },
+  {
+   "slug": "nagy2015",
+   "instance": "large_instance_5",
+   "tier": "large",
+   "run_status": "ok",
+   "wall_s": 0.601,
+   "reference_objective": 13762.0,
+   "objective": 13711.0,
+   "score": 1.0037,
+   "feasible": true,
+   "violations": [],
+   "computed_objective": 13711.0,
+   "reported_objective": 13711.0
+  },
+  {
+   "slug": "nagy2015",
+   "instance": "tiny_instance",
+   "tier": "tiny",
+   "run_status": "ok",
+   "wall_s": 0.262,
+   "reference_objective": 948.0,
+   "objective": 1142.0,
+   "score": 0.8301,
+   "feasible": true,
+   "violations": [],
+   "computed_objective": 1142.0,
+   "reported_objective": 1142.0
+  }
+ ],
+ "checks": [
+  {
+   "id": "AC-01/barnhart2000/large_instance_1",
+   "ok": true,
+   "detail": "exit 0 in 7.344s (limit 60s)"
+  },
+  {
+   "id": "AC-02/barnhart2000/large_instance_1",
+   "ok": true,
+   "detail": "finished inside the limit (7.344s < 60s)"
+  },
+  {
+   "id": "AC-03/barnhart2000/large_instance_1",
+   "ok": true,
+   "detail": "checker: feasible"
+  },
+  {
+   "id": "AC-04/barnhart2000/large_instance_1",
+   "ok": true,
+   "detail": "reported 5401.0 vs independently recomputed 5401.0"
+  },
+  {
+   "id": "AC-01/barnhart2000/large_instance_2",
+   "ok": true,
+   "detail": "exit 0 in 8.496s (limit 60s)"
+  },
+  {
+   "id": "AC-02/barnhart2000/large_instance_2",
+   "ok": true,
+   "detail": "finished inside the limit (8.496s < 60s)"
+  },
+  {
+   "id": "AC-03/barnhart2000/large_instance_2",
+   "ok": true,
+   "detail": "checker: feasible"
+  },
+  {
+   "id": "AC-04/barnhart2000/large_instance_2",
+   "ok": true,
+   "detail": "reported 4796.0 vs independently recomputed 4796.0"
+  },
+  {
+   "id": "AC-01/barnhart2000/large_instance_3",
+   "ok": true,
+   "detail": "exit 0 in 9.813s (limit 60s)"
+  },
+  {
+   "id": "AC-02/barnhart2000/large_instance_3",
+   "ok": true,
+   "detail": "finished inside the limit (9.813s < 60s)"
+  },
+  {
+   "id": "AC-03/barnhart2000/large_instance_3",
+   "ok": true,
+   "detail": "checker: feasible"
+  },
+  {
+   "id": "AC-04/barnhart2000/large_instance_3",
+   "ok": true,
+   "detail": "reported 5143.0 vs independently recomputed 5143.0"
+  },
+  {
+   "id": "AC-01/barnhart2000/large_instance_4",
+   "ok": true,
+   "detail": "exit 0 in 7.633s (limit 60s)"
+  },
+  {
+   "id": "AC-02/barnhart2000/large_instance_4",
+   "ok": true,
+   "detail": "finished inside the limit (7.633s < 60s)"
+  },
+  {
+   "id": "AC-03/barnhart2000/large_instance_4",
+   "ok": true,
+   "detail": "checker: feasible"
+  },
+  {
+   "id": "AC-04/barnhart2000/large_instance_4",
+   "ok": true,
+   "detail": "reported 5402.0 vs independently recomputed 5402.0"
+  },
+  {
+   "id": "AC-01/barnhart2000/large_instance_5",
+   "ok": true,
+   "detail": "exit 0 in 7.143s (limit 60s)"
+  },
+  {
+   "id": "AC-02/barnhart2000/large_instance_5",
+   "ok": true,
+   "detail": "finished inside the limit (7.143s < 60s)"
+  },
+  {
+   "id": "AC-03/barnhart2000/large_instance_5",
+   "ok": true,
+   "detail": "checker: feasible"
+  },
+  {
+   "id": "AC-04/barnhart2000/large_instance_5",
+   "ok": true,
+   "detail": "reported 5150.0 vs independently recomputed 5150.0"
+  },
+  {
+   "id": "AC-01/barnhart2000/tiny_instance",
+   "ok": true,
+   "detail": "exit 0 in 0.651s (limit 60s)"
+  },
+  {
+   "id": "AC-02/barnhart2000/tiny_instance",
+   "ok": true,
+   "detail": "finished inside the limit (0.651s < 60s)"
+  },
+  {
+   "id": "AC-03/barnhart2000/tiny_instance",
+   "ok": true,
+   "detail": "checker: feasible"
+  },
+  {
+   "id": "AC-04/barnhart2000/tiny_instance",
+   "ok": true,
+   "detail": "reported 64.0 vs independently recomputed 64.0"
+  },
+  {
+   "id": "AC-05/barnhart2000",
+   "ok": true,
+   "detail": "staged <slug>/solve.py present"
+  },
+  {
+   "id": "AC-06/barnhart2000",
+   "ok": true,
+   "detail": "no network imports"
+  },
+  {
+   "id": "AC-07/archive",
+   "ok": true,
+   "detail": "submission archive 24 KiB <= 4096 KiB"
+  },
+  {
+   "id": "AC-08/manifest",
+   "ok": true,
+   "detail": "benchmark/instances.json lists every instance with a sha256 and a reference objective"
+  },
+  {
+   "id": "AC-01/bodur2017/large_instance_1",
+   "ok": true,
+   "detail": "exit 0 in 11.532s (limit 60s)"
+  },
+  {
+   "id": "AC-02/bodur2017/large_instance_1",
+   "ok": true,
+   "detail": "finished inside the limit (11.532s < 60s)"
+  },
+  {
+   "id": "AC-03/bodur2017/large_instance_1",
+   "ok": true,
+   "detail": "checker: feasible"
+  },
+  {
+   "id": "AC-04/bodur2017/large_instance_1",
+   "ok": true,
+   "detail": "reported 71434.01615555266 vs independently recomputed 71434.01615555266"
+  },
+  {
+   "id": "AC-01/bodur2017/large_instance_2",
+   "ok": true,
+   "detail": "exit 0 in 6.047s (limit 60s)"
+  },
+  {
+   "id": "AC-02/bodur2017/large_instance_2",
+   "ok": true,
+   "detail": "finished inside the limit (6.047s < 60s)"
+  },
+  {
+   "id": "AC-03/bodur2017/large_instance_2",
+   "ok": true,
+   "detail": "checker: feasible"
+  },
+  {
+   "id": "AC-04/bodur2017/large_instance_2",
+   "ok": true,
+   "detail": "reported 61838.58106354389 vs independently recomputed 61838.58106354389"
+  },
+  {
+   "id": "AC-01/bodur2017/large_instance_3",
+   "ok": true,
+   "detail": "exit 0 in 3.186s (limit 60s)"
+  },
+  {
+   "id": "AC-02/bodur2017/large_instance_3",
+   "ok": true,
+   "detail": "finished inside the limit (3.186s < 60s)"
+  },
+  {
+   "id": "AC-03/bodur2017/large_instance_3",
+   "ok": true,
+   "detail": "checker: feasible"
+  },
+  {
+   "id": "AC-04/bodur2017/large_instance_3",
+   "ok": true,
+   "detail": "reported 53429.52539574545 vs independently recomputed 53429.52539574546"
+  },
+  {
+   "id": "AC-01/bodur2017/large_instance_4",
+   "ok": true,
+   "detail": "exit 0 in 15.036s (limit 60s)"
+  },
+  {
+   "id": "AC-02/bodur2017/large_instance_4",
+   "ok": true,
+   "detail": "finished inside the limit (15.036s < 60s)"
+  },
+  {
+   "id": "AC-03/bodur2017/large_instance_4",
+   "ok": true,
+   "detail": "checker: feasible"
+  },
+  {
+   "id": "AC-04/bodur2017/large_instance_4",
+   "ok": true,
+   "detail": "reported 49196.960875364384 vs independently recomputed 49196.960875364384"
+  },
+  {
+   "id": "AC-01/bodur2017/large_instance_5",
+   "ok": true,
+   "detail": "exit 0 in 15.842s (limit 60s)"
+  },
+  {
+   "id": "AC-02/bodur2017/large_instance_5",
+   "ok": true,
+   "detail": "finished inside the limit (15.842s < 60s)"
+  },
+  {
+   "id": "AC-03/bodur2017/large_instance_5",
+   "ok": true,
+   "detail": "checker: feasible"
+  },
+  {
+   "id": "AC-04/bodur2017/large_instance_5",
+   "ok": true,
+   "detail": "reported 51655.75969206903 vs independently recomputed 51655.75969206902"
+  },
+  {
+   "id": "AC-01/bodur2017/tiny_instance",
+   "ok": true,
+   "detail": "exit 0 in 1.167s (limit 60s)"
+  },
+  {
+   "id": "AC-02/bodur2017/tiny_instance",
+   "ok": true,
+   "detail": "finished inside the limit (1.167s < 60s)"
+  },
+  {
+   "id": "AC-03/bodur2017/tiny_instance",
+   "ok": true,
+   "detail": "checker: feasible"
+  },
+  {
+   "id": "AC-04/bodur2017/tiny_instance",
+   "ok": true,
+   "detail": "reported 87943.12783271771 vs independently recomputed 87943.12783271771"
+  },
+  {
+   "id": "AC-05/bodur2017",
+   "ok": true,
+   "detail": "staged <slug>/solve.py present"
+  },
+  {
+   "id": "AC-06/bodur2017",
+   "ok": true,
+   "detail": "no network imports"
+  },
+  {
+   "id": "AC-07/archive",
+   "ok": true,
+   "detail": "submission archive 24 KiB <= 4096 KiB"
+  },
+  {
+   "id": "AC-08/manifest",
+   "ok": true,
+   "detail": "benchmark/instances.json lists every instance with a sha256 and a reference objective"
+  },
+  {
+   "id": "AC-01/cordeau2006/large_instance_1",
+   "ok": true,
+   "detail": "exit 0 in 23.013s (limit 60s)"
+  },
+  {
+   "id": "AC-02/cordeau2006/large_instance_1",
+   "ok": true,
+   "detail": "finished inside the limit (23.013s < 60s)"
+  },
+  {
+   "id": "AC-03/cordeau2006/large_instance_1",
+   "ok": true,
+   "detail": "checker: feasible"
+  },
+  {
+   "id": "AC-04/cordeau2006/large_instance_1",
+   "ok": true,
+   "detail": "reported 517.9178976189262 vs independently recomputed 517.9178976189263"
+  },
+  {
+   "id": "AC-01/cordeau2006/large_instance_2",
+   "ok": true,
+   "detail": "exit 0 in 42.849s (limit 60s)"
+  },
+  {
+   "id": "AC-02/cordeau2006/large_instance_2",
+   "ok": true,
+   "detail": "finished inside the limit (42.849s < 60s)"
+  },
+  {
+   "id": "AC-03/cordeau2006/large_instance_2",
+   "ok": true,
+   "detail": "checker: feasible"
+  },
+  {
+   "id": "AC-04/cordeau2006/large_instance_2",
+   "ok": true,
+   "detail": "reported 342.6981005699518 vs independently recomputed 342.69810056995186"
+  },
+  {
+   "id": "AC-01/cordeau2006/large_instance_3",
+   "ok": true,
+   "detail": "exit 0 in 26.558s (limit 60s)"
+  },
+  {
+   "id": "AC-02/cordeau2006/large_instance_3",
+   "ok": true,
+   "detail": "finished inside the limit (26.558s < 60s)"
+  },
+  {
+   "id": "AC-03/cordeau2006/large_instance_3",
+   "ok": true,
+   "detail": "checker: feasible"
+  },
+  {
+   "id": "AC-04/cordeau2006/large_instance_3",
+   "ok": true,
+   "detail": "reported 255.54288197805843 vs independently recomputed 255.5428819780584"
+  },
+  {
+   "id": "AC-01/cordeau2006/large_instance_4",
+   "ok": true,
+   "detail": "exit 0 in 42.687s (limit 60s)"
+  },
+  {
+   "id": "AC-02/cordeau2006/large_instance_4",
+   "ok": true,
+   "detail": "finished inside the limit (42.687s < 60s)"
+  },
+  {
+   "id": "AC-03/cordeau2006/large_instance_4",
+   "ok": true,
+   "detail": "checker: feasible"
+  },
+  {
+   "id": "AC-04/cordeau2006/large_instance_4",
+   "ok": true,
+   "detail": "reported 527.8583510557509 vs independently recomputed 527.858351055751"
+  },
+  {
+   "id": "AC-01/cordeau2006/large_instance_5",
+   "ok": true,
+   "detail": "exit 0 in 1.778s (limit 60s)"
+  },
+  {
+   "id": "AC-02/cordeau2006/large_instance_5",
+   "ok": true,
+   "detail": "finished inside the limit (1.778s < 60s)"
+  },
+  {
+   "id": "AC-03/cordeau2006/large_instance_5",
+   "ok": true,
+   "detail": "checker: feasible"
+  },
+  {
+   "id": "AC-04/cordeau2006/large_instance_5",
+   "ok": true,
+   "detail": "reported 137.49381776399247 vs independently recomputed 137.4938177639925"
+  },
+  {
+   "id": "AC-01/cordeau2006/tiny_instance",
+   "ok": true,
+   "detail": "exit 0 in 5.06s (limit 60s)"
+  },
+  {
+   "id": "AC-02/cordeau2006/tiny_instance",
+   "ok": true,
+   "detail": "finished inside the limit (5.06s < 60s)"
+  },
+  {
+   "id": "AC-03/cordeau2006/tiny_instance",
+   "ok": true,
+   "detail": "checker: feasible"
+  },
+  {
+   "id": "AC-04/cordeau2006/tiny_instance",
+   "ok": true,
+   "detail": "reported 315.30195594453494 vs independently recomputed 315.3019559445349"
+  },
+  {
+   "id": "AC-05/cordeau2006",
+   "ok": true,
+   "detail": "staged <slug>/solve.py present"
+  },
+  {
+   "id": "AC-06/cordeau2006",
+   "ok": true,
+   "detail": "no network imports"
+  },
+  {
+   "id": "AC-07/archive",
+   "ok": true,
+   "detail": "submission archive 24 KiB <= 4096 KiB"
+  },
+  {
+   "id": "AC-08/manifest",
+   "ok": true,
+   "detail": "benchmark/instances.json lists every instance with a sha256 and a reference objective"
+  },
+  {
+   "id": "AC-01/fischetti1998/large_instance_1",
+   "ok": true,
+   "detail": "exit 0 in 51.733s (limit 60s)"
+  },
+  {
+   "id": "AC-02/fischetti1998/large_instance_1",
+   "ok": true,
+   "detail": "finished inside the limit (51.733s < 60s)"
+  },
+  {
+   "id": "AC-03/fischetti1998/large_instance_1",
+   "ok": true,
+   "detail": "checker: feasible"
+  },
+  {
+   "id": "AC-04/fischetti1998/large_instance_1",
+   "ok": true,
+   "detail": "reported 13925.0 vs independently recomputed 13925.0"
+  },
+  {
+   "id": "AC-01/fischetti1998/large_instance_2",
+   "ok": true,
+   "detail": "exit 0 in 14.94s (limit 60s)"
+  },
+  {
+   "id": "AC-02/fischetti1998/large_instance_2",
+   "ok": true,
+   "detail": "finished inside the limit (14.94s < 60s)"
+  },
+  {
+   "id": "AC-03/fischetti1998/large_instance_2",
+   "ok": true,
+   "detail": "checker: feasible"
+  },
+  {
+   "id": "AC-04/fischetti1998/large_instance_2",
+   "ok": true,
+   "detail": "reported 7421.0 vs independently recomputed 7421.0"
+  },
+  {
+   "id": "AC-01/fischetti1998/large_instance_3",
+   "ok": true,
+   "detail": "exit 0 in 55.217s (limit 60s)"
+  },
+  {
+   "id": "AC-02/fischetti1998/large_instance_3",
+   "ok": true,
+   "detail": "finished inside the limit (55.217s < 60s)"
+  },
+  {
+   "id": "AC-03/fischetti1998/large_instance_3",
+   "ok": true,
+   "detail": "checker: feasible"
+  },
+  {
+   "id": "AC-04/fischetti1998/large_instance_3",
+   "ok": true,
+   "detail": "reported 16524.0 vs independently recomputed 16524.0"
+  },
+  {
+   "id": "AC-01/fischetti1998/large_instance_4",
+   "ok": true,
+   "detail": "exit 0 in 55.208s (limit 60s)"
+  },
+  {
+   "id": "AC-02/fischetti1998/large_instance_4",
+   "ok": true,
+   "detail": "finished inside the limit (55.208s < 60s)"
+  },
+  {
+   "id": "AC-03/fischetti1998/large_instance_4",
+   "ok": true,
+   "detail": "checker: feasible"
+  },
+  {
+   "id": "AC-04/fischetti1998/large_instance_4",
+   "ok": true,
+   "detail": "reported 20079.0 vs independently recomputed 20079.0"
+  },
+  {
+   "id": "AC-01/fischetti1998/large_instance_5",
+   "ok": true,
+   "detail": "exit 0 in 55.209s (limit 60s)"
+  },
+  {
+   "id": "AC-02/fischetti1998/large_instance_5",
+   "ok": true,
+   "detail": "finished inside the limit (55.209s < 60s)"
+  },
+  {
+   "id": "AC-03/fischetti1998/large_instance_5",
+   "ok": true,
+   "detail": "checker: feasible"
+  },
+  {
+   "id": "AC-04/fischetti1998/large_instance_5",
+   "ok": true,
+   "detail": "reported 24131.0 vs independently recomputed 24131.0"
+  },
+  {
+   "id": "AC-01/fischetti1998/tiny_instance",
+   "ok": true,
+   "detail": "exit 0 in 0.173s (limit 60s)"
+  },
+  {
+   "id": "AC-02/fischetti1998/tiny_instance",
+   "ok": true,
+   "detail": "finished inside the limit (0.173s < 60s)"
+  },
+  {
+   "id": "AC-03/fischetti1998/tiny_instance",
+   "ok": true,
+   "detail": "checker: feasible"
+  },
+  {
+   "id": "AC-04/fischetti1998/tiny_instance",
+   "ok": true,
+   "detail": "reported 287.0 vs independently recomputed 287.0"
+  },
+  {
+   "id": "AC-05/fischetti1998",
+   "ok": true,
+   "detail": "staged <slug>/solve.py present"
+  },
+  {
+   "id": "AC-06/fischetti1998",
+   "ok": true,
+   "detail": "no network imports"
+  },
+  {
+   "id": "AC-07/archive",
+   "ok": true,
+   "detail": "submission archive 24 KiB <= 4096 KiB"
+  },
+  {
+   "id": "AC-08/manifest",
+   "ok": true,
+   "detail": "benchmark/instances.json lists every instance with a sha256 and a reference objective"
+  },
+  {
+   "id": "AC-01/hoffman1993/large_instance_1",
+   "ok": true,
+   "detail": "exit 0 in 54.948s (limit 60s)"
+  },
+  {
+   "id": "AC-02/hoffman1993/large_instance_1",
+   "ok": true,
+   "detail": "finished inside the limit (54.948s < 60s)"
+  },
+  {
+   "id": "AC-03/hoffman1993/large_instance_1",
+   "ok": true,
+   "detail": "checker: feasible"
+  },
+  {
+   "id": "AC-04/hoffman1993/large_instance_1",
+   "ok": true,
+   "detail": "reported 2117.0 vs independently recomputed 2117.0"
+  },
+  {
+   "id": "AC-01/hoffman1993/large_instance_2",
+   "ok": true,
+   "detail": "exit 0 in 1.447s (limit 60s)"
+  },
+  {
+   "id": "AC-02/hoffman1993/large_instance_2",
+   "ok": true,
+   "detail": "finished inside the limit (1.447s < 60s)"
+  },
+  {
+   "id": "AC-03/hoffman1993/large_instance_2",
+   "ok": true,
+   "detail": "checker: feasible"
+  },
+  {
+   "id": "AC-04/hoffman1993/large_instance_2",
+   "ok": true,
+   "detail": "reported 229.0 vs independently recomputed 229.0"
+  },
+  {
+   "id": "AC-01/hoffman1993/large_instance_3",
+   "ok": true,
+   "detail": "exit 0 in 54.306s (limit 60s)"
+  },
+  {
+   "id": "AC-02/hoffman1993/large_instance_3",
+   "ok": true,
+   "detail": "finished inside the limit (54.306s < 60s)"
+  },
+  {
+   "id": "AC-03/hoffman1993/large_instance_3",
+   "ok": true,
+   "detail": "checker: feasible"
+  },
+  {
+   "id": "AC-04/hoffman1993/large_instance_3",
+   "ok": true,
+   "detail": "reported 973.0 vs independently recomputed 973.0"
+  },
+  {
+   "id": "AC-01/hoffman1993/large_instance_4",
+   "ok": true,
+   "detail": "exit 0 in 54.797s (limit 60s)"
+  },
+  {
+   "id": "AC-02/hoffman1993/large_instance_4",
+   "ok": true,
+   "detail": "finished inside the limit (54.797s < 60s)"
+  },
+  {
+   "id": "AC-03/hoffman1993/large_instance_4",
+   "ok": false,
+   "detail": "checker rejected: empty required decision witness field(s): selected_rotations"
+  },
+  {
+   "id": "AC-01/hoffman1993/large_instance_5",
+   "ok": true,
+   "detail": "exit 0 in 55.073s (limit 60s)"
+  },
+  {
+   "id": "AC-02/hoffman1993/large_instance_5",
+   "ok": true,
+   "detail": "finished inside the limit (55.073s < 60s)"
+  },
+  {
+   "id": "AC-03/hoffman1993/large_instance_5",
+   "ok": false,
+   "detail": "checker rejected: empty required decision witness field(s): selected_rotations"
+  },
+  {
+   "id": "AC-01/hoffman1993/tiny_instance",
+   "ok": true,
+   "detail": "exit 0 in 0.979s (limit 60s)"
+  },
+  {
+   "id": "AC-02/hoffman1993/tiny_instance",
+   "ok": true,
+   "detail": "finished inside the limit (0.979s < 60s)"
+  },
+  {
+   "id": "AC-03/hoffman1993/tiny_instance",
+   "ok": true,
+   "detail": "checker: feasible"
+  },
+  {
+   "id": "AC-04/hoffman1993/tiny_instance",
+   "ok": true,
+   "detail": "reported 16.0 vs independently recomputed 16.0"
+  },
+  {
+   "id": "AC-05/hoffman1993",
+   "ok": true,
+   "detail": "staged <slug>/solve.py present"
+  },
+  {
+   "id": "AC-06/hoffman1993",
+   "ok": true,
+   "detail": "no network imports"
+  },
+  {
+   "id": "AC-07/archive",
+   "ok": true,
+   "detail": "submission archive 24 KiB <= 4096 KiB"
+  },
+  {
+   "id": "AC-08/manifest",
+   "ok": true,
+   "detail": "benchmark/instances.json lists every instance with a sha256 and a reference objective"
+  },
+  {
+   "id": "AC-01/nagy2015/large_instance_1",
+   "ok": true,
+   "detail": "exit 0 in 1.131s (limit 60s)"
+  },
+  {
+   "id": "AC-02/nagy2015/large_instance_1",
+   "ok": true,
+   "detail": "finished inside the limit (1.131s < 60s)"
+  },
+  {
+   "id": "AC-03/nagy2015/large_instance_1",
+   "ok": true,
+   "detail": "checker: feasible"
+  },
+  {
+   "id": "AC-04/nagy2015/large_instance_1",
+   "ok": true,
+   "detail": "reported 13711.0 vs independently recomputed 13711.0"
+  },
+  {
+   "id": "AC-01/nagy2015/large_instance_2",
+   "ok": true,
+   "detail": "exit 0 in 3.661s (limit 60s)"
+  },
+  {
+   "id": "AC-02/nagy2015/large_instance_2",
+   "ok": true,
+   "detail": "finished inside the limit (3.661s < 60s)"
+  },
+  {
+   "id": "AC-03/nagy2015/large_instance_2",
+   "ok": true,
+   "detail": "checker: feasible"
+  },
+  {
+   "id": "AC-04/nagy2015/large_instance_2",
+   "ok": true,
+   "detail": "reported 3963.0 vs independently recomputed 3963.0"
+  },
+  {
+   "id": "AC-01/nagy2015/large_instance_3",
+   "ok": true,
+   "detail": "exit 0 in 0.73s (limit 60s)"
+  },
+  {
+   "id": "AC-02/nagy2015/large_instance_3",
+   "ok": true,
+   "detail": "finished inside the limit (0.73s < 60s)"
+  },
+  {
+   "id": "AC-03/nagy2015/large_instance_3",
+   "ok": true,
+   "detail": "checker: feasible"
+  },
+  {
+   "id": "AC-04/nagy2015/large_instance_3",
+   "ok": true,
+   "detail": "reported 13202.0 vs independently recomputed 13202.0"
+  },
+  {
+   "id": "AC-01/nagy2015/large_instance_4",
+   "ok": true,
+   "detail": "exit 0 in 2.674s (limit 60s)"
+  },
+  {
+   "id": "AC-02/nagy2015/large_instance_4",
+   "ok": true,
+   "detail": "finished inside the limit (2.674s < 60s)"
+  },
+  {
+   "id": "AC-03/nagy2015/large_instance_4",
+   "ok": true,
+   "detail": "checker: feasible"
+  },
+  {
+   "id": "AC-04/nagy2015/large_instance_4",
+   "ok": true,
+   "detail": "reported 3963.0 vs independently recomputed 3963.0"
+  },
+  {
+   "id": "AC-01/nagy2015/large_instance_5",
+   "ok": true,
+   "detail": "exit 0 in 0.601s (limit 60s)"
+  },
+  {
+   "id": "AC-02/nagy2015/large_instance_5",
+   "ok": true,
+   "detail": "finished inside the limit (0.601s < 60s)"
+  },
+  {
+   "id": "AC-03/nagy2015/large_instance_5",
+   "ok": true,
+   "detail": "checker: feasible"
+  },
+  {
+   "id": "AC-04/nagy2015/large_instance_5",
+   "ok": true,
+   "detail": "reported 13711.0 vs independently recomputed 13711.0"
+  },
+  {
+   "id": "AC-01/nagy2015/tiny_instance",
+   "ok": true,
+   "detail": "exit 0 in 0.262s (limit 60s)"
+  },
+  {
+   "id": "AC-02/nagy2015/tiny_instance",
+   "ok": true,
+   "detail": "finished inside the limit (0.262s < 60s)"
+  },
+  {
+   "id": "AC-03/nagy2015/tiny_instance",
+   "ok": true,
+   "detail": "checker: feasible"
+  },
+  {
+   "id": "AC-04/nagy2015/tiny_instance",
+   "ok": true,
+   "detail": "reported 1142.0 vs independently recomputed 1142.0"
+  },
+  {
+   "id": "AC-05/nagy2015",
+   "ok": true,
+   "detail": "staged <slug>/solve.py present"
+  },
+  {
+   "id": "AC-06/nagy2015",
+   "ok": true,
+   "detail": "no network imports"
+  },
+  {
+   "id": "AC-07/archive",
+   "ok": true,
+   "detail": "submission archive 24 KiB <= 4096 KiB"
+  },
+  {
+   "id": "AC-08/manifest",
+   "ok": true,
+   "detail": "benchmark/instances.json lists every instance with a sha256 and a reference objective"
+  }
+ ],
+ "failed": [],
+ "recorded_infeasible": [
+  {
+   "id": "AC-03/hoffman1993/large_instance_4",
+   "ok": false,
+   "detail": "checker rejected: empty required decision witness field(s): selected_rotations"
+  },
+  {
+   "id": "AC-03/hoffman1993/large_instance_5",
+   "ok": false,
+   "detail": "checker rejected: empty required decision witness field(s): selected_rotations"
+  }
+ ]
+}

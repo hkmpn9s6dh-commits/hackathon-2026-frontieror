@@ -1,0 +1,246 @@
+{
+ "generated_by": "harness/verify.py",
+ "slugs": [
+  "bodur2017"
+ ],
+ "time_limit_s": 60,
+ "tier": "all",
+ "problems": {
+  "bodur2017": {
+   "instances": 6,
+   "feasible": 6,
+   "mean_score": 0.9153,
+   "max_wall_s": 15.842
+  }
+ },
+ "mean_score": 0.9153,
+ "rows": [
+  {
+   "slug": "bodur2017",
+   "instance": "large_instance_1",
+   "tier": "large",
+   "run_status": "ok",
+   "wall_s": 11.532,
+   "reference_objective": 63727.52657900184,
+   "objective": 71434.01615555266,
+   "score": 0.8921,
+   "feasible": true,
+   "violations": [],
+   "computed_objective": 71434.01615555266,
+   "reported_objective": 71434.01615555266
+  },
+  {
+   "slug": "bodur2017",
+   "instance": "large_instance_2",
+   "tier": "large",
+   "run_status": "ok",
+   "wall_s": 6.047,
+   "reference_objective": 54529.76190944668,
+   "objective": 61838.58106354389,
+   "score": 0.8818,
+   "feasible": true,
+   "violations": [],
+   "computed_objective": 61838.58106354389,
+   "reported_objective": 61838.58106354389
+  },
+  {
+   "slug": "bodur2017",
+   "instance": "large_instance_3",
+   "tier": "large",
+   "run_status": "ok",
+   "wall_s": 3.186,
+   "reference_objective": 48283.70849064936,
+   "objective": 53429.52539574546,
+   "score": 0.9037,
+   "feasible": true,
+   "violations": [],
+   "computed_objective": 53429.52539574546,
+   "reported_objective": 53429.52539574545
+  },
+  {
+   "slug": "bodur2017",
+   "instance": "large_instance_4",
+   "tier": "large",
+   "run_status": "ok",
+   "wall_s": 15.036,
+   "reference_objective": 48495.883382629,
+   "objective": 49196.960875364384,
+   "score": 0.9857,
+   "feasible": true,
+   "violations": [],
+   "computed_objective": 49196.960875364384,
+   "reported_objective": 49196.960875364384
+  },
+  {
+   "slug": "bodur2017",
+   "instance": "large_instance_5",
+   "tier": "large",
+   "run_status": "ok",
+   "wall_s": 15.842,
+   "reference_objective": 50576.02091634332,
+   "objective": 51655.75969206902,
+   "score": 0.9791,
+   "feasible": true,
+   "violations": [],
+   "computed_objective": 51655.75969206902,
+   "reported_objective": 51655.75969206903
+  },
+  {
+   "slug": "bodur2017",
+   "instance": "tiny_instance",
+   "tier": "tiny",
+   "run_status": "ok",
+   "wall_s": 1.167,
+   "reference_objective": 74706.08988139468,
+   "objective": 87943.12783271771,
+   "score": 0.8495,
+   "feasible": true,
+   "violations": [],
+   "computed_objective": 87943.12783271771,
+   "reported_objective": 87943.12783271771
+  }
+ ],
+ "checks": [
+  {
+   "id": "AC-01/bodur2017/large_instance_1",
+   "ok": true,
+   "detail": "exit 0 in 11.532s (limit 60s)"
+  },
+  {
+   "id": "AC-02/bodur2017/large_instance_1",
+   "ok": true,
+   "detail": "finished inside the limit (11.532s < 60s)"
+  },
+  {
+   "id": "AC-03/bodur2017/large_instance_1",
+   "ok": true,
+   "detail": "checker: feasible"
+  },
+  {
+   "id": "AC-04/bodur2017/large_instance_1",
+   "ok": true,
+   "detail": "reported 71434.01615555266 vs independently recomputed 71434.01615555266"
+  },
+  {
+   "id": "AC-01/bodur2017/large_instance_2",
+   "ok": true,
+   "detail": "exit 0 in 6.047s (limit 60s)"
+  },
+  {
+   "id": "AC-02/bodur2017/large_instance_2",
+   "ok": true,
+   "detail": "finished inside the limit (6.047s < 60s)"
+  },
+  {
+   "id": "AC-03/bodur2017/large_instance_2",
+   "ok": true,
+   "detail": "checker: feasible"
+  },
+  {
+   "id": "AC-04/bodur2017/large_instance_2",
+   "ok": true,
+   "detail": "reported 61838.58106354389 vs independently recomputed 61838.58106354389"
+  },
+  {
+   "id": "AC-01/bodur2017/large_instance_3",
+   "ok": true,
+   "detail": "exit 0 in 3.186s (limit 60s)"
+  },
+  {
+   "id": "AC-02/bodur2017/large_instance_3",
+   "ok": true,
+   "detail": "finished inside the limit (3.186s < 60s)"
+  },
+  {
+   "id": "AC-03/bodur2017/large_instance_3",
+   "ok": true,
+   "detail": "checker: feasible"
+  },
+  {
+   "id": "AC-04/bodur2017/large_instance_3",
+   "ok": true,
+   "detail": "reported 53429.52539574545 vs independently recomputed 53429.52539574546"
+  },
+  {
+   "id": "AC-01/bodur2017/large_instance_4",
+   "ok": true,
+   "detail": "exit 0 in 15.036s (limit 60s)"
+  },
+  {
+   "id": "AC-02/bodur2017/large_instance_4",
+   "ok": true,
+   "detail": "finished inside the limit (15.036s < 60s)"
+  },
+  {
+   "id": "AC-03/bodur2017/large_instance_4",
+   "ok": true,
+   "detail": "checker: feasible"
+  },
+  {
+   "id": "AC-04/bodur2017/large_instance_4",
+   "ok": true,
+   "detail": "reported 49196.960875364384 vs independently recomputed 49196.960875364384"
+  },
+  {
+   "id": "AC-01/bodur2017/large_instance_5",
+   "ok": true,
+   "detail": "exit 0 in 15.842s (limit 60s)"
+  },
+  {
+   "id": "AC-02/bodur2017/large_instance_5",
+   "ok": true,
+   "detail": "finished inside the limit (15.842s < 60s)"
+  },
+  {
+   "id": "AC-03/bodur2017/large_instance_5",
+   "ok": true,
+   "detail": "checker: feasible"
+  },
+  {
+   "id": "AC-04/bodur2017/large_instance_5",
+   "ok": true,
+   "detail": "reported 51655.75969206903 vs independently recomputed 51655.75969206902"
+  },
+  {
+   "id": "AC-01/bodur2017/tiny_instance",
+   "ok": true,
+   "detail": "exit 0 in 1.167s (limit 60s)"
+  },
+  {
+   "id": "AC-02/bodur2017/tiny_instance",
+   "ok": true,
+   "detail": "finished inside the limit (1.167s < 60s)"
+  },
+  {
+   "id": "AC-03/bodur2017/tiny_instance",
+   "ok": true,
+   "detail": "checker: feasible"
+  },
+  {
+   "id": "AC-04/bodur2017/tiny_instance",
+   "ok": true,
+   "detail": "reported 87943.12783271771 vs independently recomputed 87943.12783271771"
+  },
+  {
+   "id": "AC-05/bodur2017",
+   "ok": true,
+   "detail": "staged <slug>/solve.py present"
+  },
+  {
+   "id": "AC-06/bodur2017",
+   "ok": true,
+   "detail": "no network imports"
+  },
+  {
+   "id": "AC-07/archive",
+   "ok": true,
+   "detail": "submission archive 24 KiB <= 4096 KiB"
+  },
+  {
+   "id": "AC-08/manifest",
+   "ok": true,
+   "detail": "benchmark/instances.json lists every instance with a sha256 and a reference objective"
+  }
+ ],
+ "failed": []
+}

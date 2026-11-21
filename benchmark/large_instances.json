@@ -1,0 +1,212 @@
+[
+ {
+  "slug": "barnhart2000",
+  "name": "large_instance_1",
+  "path": "tasks/barnhart2000/instance/large_instance_1.json",
+  "sha256": "c8956f449a47a159bed55b94635f62c734b9c2be0496d7455a68a23e68fc1c52",
+  "size": 117848
+ },
+ {
+  "slug": "barnhart2000",
+  "name": "large_instance_2",
+  "path": "tasks/barnhart2000/instance/large_instance_2.json",
+  "sha256": "f82d1f2fec0b72b980d1499dfa5bea04efd81833831be4d07ebc443d0b3ef98d",
+  "size": 117871
+ },
+ {
+  "slug": "barnhart2000",
+  "name": "large_instance_3",
+  "path": "tasks/barnhart2000/instance/large_instance_3.json",
+  "sha256": "809b0f291161f27cf36da2f37ec275487ebf3761bd5cc978a8732858d80d5d96",
+  "size": 117789
+ },
+ {
+  "slug": "barnhart2000",
+  "name": "large_instance_4",
+  "path": "tasks/barnhart2000/instance/large_instance_4.json",
+  "sha256": "192cabc44d8af2c14f37f65fc3db8e1d178efdd6ce31b02b4d7398371cccd6ef",
+  "size": 117833
+ },
+ {
+  "slug": "barnhart2000",
+  "name": "large_instance_5",
+  "path": "tasks/barnhart2000/instance/large_instance_5.json",
+  "sha256": "8edd9796644c92ff067fe439db6d9a0aa59ab5a59e3acb0869fc9e0343713414",
+  "size": 117828
+ },
+ {
+  "slug": "bodur2017",
+  "name": "large_instance_1",
+  "path": "tasks/bodur2017/instance/large_instance_1.json",
+  "sha256": "0153dd4dc3a60cebb5c1fa8236892d19d97eab7681a7de2fadf33c69afe4bbdc",
+  "size": 2281278
+ },
+ {
+  "slug": "bodur2017",
+  "name": "large_instance_2",
+  "path": "tasks/bodur2017/instance/large_instance_2.json",
+  "sha256": "1c5a96428ff72dc805d415c17174be10adc2b562bfe92654b829dd03d905f1a4",
+  "size": 2279897
+ },
+ {
+  "slug": "bodur2017",
+  "name": "large_instance_3",
+  "path": "tasks/bodur2017/instance/large_instance_3.json",
+  "sha256": "207900ae51c7702c38aa589bc725212e66aa8499378920f38a5c45a151c59cfc",
+  "size": 2275487
+ },
+ {
+  "slug": "bodur2017",
+  "name": "large_instance_4",
+  "path": "tasks/bodur2017/instance/large_instance_4.json",
+  "sha256": "617fe58d66108e7777998d52a1cdc061b03fb12944fae67783ffa7e03eeae318",
+  "size": 2290630
+ },
+ {
+  "slug": "bodur2017",
+  "name": "large_instance_5",
+  "path": "tasks/bodur2017/instance/large_instance_5.json",
+  "sha256": "e8f95baba30083f3c9de0a1880b2dd90ab15f7aa16e8269f54f208fc7952db76",
+  "size": 2282657
+ },
+ {
+  "slug": "cordeau2006",
+  "name": "large_instance_1",
+  "path": "tasks/cordeau2006/instance/large_instance_1.json",
+  "sha256": "e201c205b0c534a085c6b5f17cfd1b8c0ce58b8182e0f61d09bad80f2d14e6dc",
+  "size": 22553
+ },
+ {
+  "slug": "cordeau2006",
+  "name": "large_instance_2",
+  "path": "tasks/cordeau2006/instance/large_instance_2.json",
+  "sha256": "ba7fff30e4f3da3821333708f77698625c4b039ff2d7aa7cdeff82ddff625d28",
+  "size": 22558
+ },
+ {
+  "slug": "cordeau2006",
+  "name": "large_instance_3",
+  "path": "tasks/cordeau2006/instance/large_instance_3.json",
+  "sha256": "69670442e3f9f4d416c8bd63100a649505816cca7e4566db6cb81ccbd29ef679",
+  "size": 22225
+ },
+ {
+  "slug": "cordeau2006",
+  "name": "large_instance_4",
+  "path": "tasks/cordeau2006/instance/large_instance_4.json",
+  "sha256": "fcf601ea11208a992fc01f3663b032b1d970a5df4afcef878e692c94fa67bdf4",
+  "size": 22539
+ },
+ {
+  "slug": "cordeau2006",
+  "name": "large_instance_5",
+  "path": "tasks/cordeau2006/instance/large_instance_5.json",
+  "sha256": "95d7323393b34bed49ac03905b01ea500f314452862f097f9dbb799879be6ec0",
+  "size": 10543
+ },
+ {
+  "slug": "fischetti1998",
+  "name": "large_instance_1",
+  "path": "tasks/fischetti1998/instance/large_instance_1.json",
+  "sha256": "f0dd551a424b06fd38238088bb426b766a9b430e014ac247461522cc67347047",
+  "size": 2449261
+ },
+ {
+  "slug": "fischetti1998",
+  "name": "large_instance_2",
+  "path": "tasks/fischetti1998/instance/large_instance_2.json",
+  "sha256": "4c588cdfbfe4211773741576130283ce5f9aee92a92e6742482b69942b98a481",
+  "size": 2449278
+ },
+ {
+  "slug": "fischetti1998",
+  "name": "large_instance_3",
+  "path": "tasks/fischetti1998/instance/large_instance_3.json",
+  "sha256": "a464e5a080d4766bffef8bf69d647f833d920bab2f886f62ce947b99d35807b4",
+  "size": 2449283
+ },
+ {
+  "slug": "fischetti1998",
+  "name": "large_instance_4",
+  "path": "tasks/fischetti1998/instance/large_instance_4.json",
+  "sha256": "bda2e933a0b509792643febcc0cd606efbfbc1a1f2f6cff0539cd9483bacf484",
+  "size": 2449283
+ },
+ {
+  "slug": "fischetti1998",
+  "name": "large_instance_5",
+  "path": "tasks/fischetti1998/instance/large_instance_5.json",
+  "sha256": "f37adbc41e8a3be6f4e075f22af1d9115c55f6650b2c3678ce2a7ee835fac70a",
+  "size": 2449283
+ },
+ {
+  "slug": "hoffman1993",
+  "name": "large_instance_1",
+  "path": "tasks/hoffman1993/instance/large_instance_1.json",
+  "sha256": "75d8c9bb2eee959abf1cf0d6c4eb993346916d4f3b0fa1b8c85b747d35852ceb",
+  "size": 2602564
+ },
+ {
+  "slug": "hoffman1993",
+  "name": "large_instance_2",
+  "path": "tasks/hoffman1993/instance/large_instance_2.json",
+  "sha256": "32cd2a199670ca0bf38c540f0f6b9d0453b942147e7edda2dcb58fb06aa6b0ab",
+  "size": 579763
+ },
+ {
+  "slug": "hoffman1993",
+  "name": "large_instance_3",
+  "path": "tasks/hoffman1993/instance/large_instance_3.json",
+  "sha256": "a742ddd66d78d7a3412237f51398c29a3eb5e28eb6d2d1b1724cfac78ff1c762",
+  "size": 1171365
+ },
+ {
+  "slug": "hoffman1993",
+  "name": "large_instance_4",
+  "path": "tasks/hoffman1993/instance/large_instance_4.json",
+  "sha256": "851a40e1bf3ee8f8ca49dbef89ce7326a65fa98ff2609eb4a0847f084e3b1c1a",
+  "size": 4219379
+ },
+ {
+  "slug": "hoffman1993",
+  "name": "large_instance_5",
+  "path": "tasks/hoffman1993/instance/large_instance_5.json",
+  "sha256": "f97145a9dd23e29efa2bdbde32694e0af137a4e86e20ef6ead7333daea63c29b",
+  "size": 6514338
+ },
+ {
+  "slug": "nagy2015",
+  "name": "large_instance_1",
+  "path": "tasks/nagy2015/instance/large_instance_1.json",
+  "sha256": "0022b7919ad50ed999a388fb330a5e8dce1451536157a3e73095911d3556cffb",
+  "size": 426077
+ },
+ {
+  "slug": "nagy2015",
+  "name": "large_instance_2",
+  "path": "tasks/nagy2015/instance/large_instance_2.json",
+  "sha256": "4961384e34ed8d877ccf0124065739240400e72948521eb54ee12be5f465e01f",
+  "size": 425878
+ },
+ {
+  "slug": "nagy2015",
+  "name": "large_instance_3",
+  "path": "tasks/nagy2015/instance/large_instance_3.json",
+  "sha256": "5a6700b33cb373a106af5b57c7445dee6ec3dd12b6515ddb5b83c0e394531018",
+  "size": 426212
+ },
+ {
+  "slug": "nagy2015",
+  "name": "large_instance_4",
+  "path": "tasks/nagy2015/instance/large_instance_4.json",
+  "sha256": "0f8ed3143c06d30519a4e470fa43e268b13857b877ea61e356244b21c8e540ff",
+  "size": 426199
+ },
+ {
+  "slug": "nagy2015",
+  "name": "large_instance_5",
+  "path": "tasks/nagy2015/instance/large_instance_5.json",
+  "sha256": "930b88455361da50985c16c8d29775bb280b1230406d203e11bc242aedd89701",
+  "size": 426467
+ }
+]

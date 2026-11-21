@@ -1,0 +1,246 @@
+{
+ "generated_by": "harness/verify.py",
+ "slugs": [
+  "nagy2015"
+ ],
+ "time_limit_s": 60,
+ "tier": "all",
+ "problems": {
+  "nagy2015": {
+   "instances": 6,
+   "feasible": 6,
+   "mean_score": 0.9418,
+   "max_wall_s": 3.661
+  }
+ },
+ "mean_score": 0.9418,
+ "rows": [
+  {
+   "slug": "nagy2015",
+   "instance": "large_instance_1",
+   "tier": "large",
+   "run_status": "ok",
+   "wall_s": 1.131,
+   "reference_objective": 13986.0,
+   "objective": 13711.0,
+   "score": 1.0201,
+   "feasible": true,
+   "violations": [],
+   "computed_objective": 13711.0,
+   "reported_objective": 13711.0
+  },
+  {
+   "slug": "nagy2015",
+   "instance": "large_instance_2",
+   "tier": "large",
+   "run_status": "ok",
+   "wall_s": 3.661,
+   "reference_objective": 3652.0,
+   "objective": 3963.0,
+   "score": 0.9215,
+   "feasible": true,
+   "violations": [],
+   "computed_objective": 3963.0,
+   "reported_objective": 3963.0
+  },
+  {
+   "slug": "nagy2015",
+   "instance": "large_instance_3",
+   "tier": "large",
+   "run_status": "ok",
+   "wall_s": 0.73,
+   "reference_objective": 13361.0,
+   "objective": 13202.0,
+   "score": 1.012,
+   "feasible": true,
+   "violations": [],
+   "computed_objective": 13202.0,
+   "reported_objective": 13202.0
+  },
+  {
+   "slug": "nagy2015",
+   "instance": "large_instance_4",
+   "tier": "large",
+   "run_status": "ok",
+   "wall_s": 2.674,
+   "reference_objective": 3423.0,
+   "objective": 3963.0,
+   "score": 0.8637,
+   "feasible": true,
+   "violations": [],
+   "computed_objective": 3963.0,
+   "reported_objective": 3963.0
+  },
+  {
+   "slug": "nagy2015",
+   "instance": "large_instance_5",
+   "tier": "large",
+   "run_status": "ok",
+   "wall_s": 0.601,
+   "reference_objective": 13762.0,
+   "objective": 13711.0,
+   "score": 1.0037,
+   "feasible": true,
+   "violations": [],
+   "computed_objective": 13711.0,
+   "reported_objective": 13711.0
+  },
+  {
+   "slug": "nagy2015",
+   "instance": "tiny_instance",
+   "tier": "tiny",
+   "run_status": "ok",
+   "wall_s": 0.262,
+   "reference_objective": 948.0,
+   "objective": 1142.0,
+   "score": 0.8301,
+   "feasible": true,
+   "violations": [],
+   "computed_objective": 1142.0,
+   "reported_objective": 1142.0
+  }
+ ],
+ "checks": [
+  {
+   "id": "AC-01/nagy2015/large_instance_1",
+   "ok": true,
+   "detail": "exit 0 in 1.131s (limit 60s)"
+  },
+  {
+   "id": "AC-02/nagy2015/large_instance_1",
+   "ok": true,
+   "detail": "finished inside the limit (1.131s < 60s)"
+  },
+  {
+   "id": "AC-03/nagy2015/large_instance_1",
+   "ok": true,
+   "detail": "checker: feasible"
+  },
+  {
+   "id": "AC-04/nagy2015/large_instance_1",
+   "ok": true,
+   "detail": "reported 13711.0 vs independently recomputed 13711.0"
+  },
+  {
+   "id": "AC-01/nagy2015/large_instance_2",
+   "ok": true,
+   "detail": "exit 0 in 3.661s (limit 60s)"
+  },
+  {
+   "id": "AC-02/nagy2015/large_instance_2",
+   "ok": true,
+   "detail": "finished inside the limit (3.661s < 60s)"
+  },
+  {
+   "id": "AC-03/nagy2015/large_instance_2",
+   "ok": true,
+   "detail": "checker: feasible"
+  },
+  {
+   "id": "AC-04/nagy2015/large_instance_2",
+   "ok": true,
+   "detail": "reported 3963.0 vs independently recomputed 3963.0"
+  },
+  {
+   "id": "AC-01/nagy2015/large_instance_3",
+   "ok": true,
+   "detail": "exit 0 in 0.73s (limit 60s)"
+  },
+  {
+   "id": "AC-02/nagy2015/large_instance_3",
+   "ok": true,
+   "detail": "finished inside the limit (0.73s < 60s)"
+  },
+  {
+   "id": "AC-03/nagy2015/large_instance_3",
+   "ok": true,
+   "detail": "checker: feasible"
+  },
+  {
+   "id": "AC-04/nagy2015/large_instance_3",
+   "ok": true,
+   "detail": "reported 13202.0 vs independently recomputed 13202.0"
+  },
+  {
+   "id": "AC-01/nagy2015/large_instance_4",
+   "ok": true,
+   "detail": "exit 0 in 2.674s (limit 60s)"
+  },
+  {
+   "id": "AC-02/nagy2015/large_instance_4",
+   "ok": true,
+   "detail": "finished inside the limit (2.674s < 60s)"
+  },
+  {
+   "id": "AC-03/nagy2015/large_instance_4",
+   "ok": true,
+   "detail": "checker: feasible"
+  },
+  {
+   "id": "AC-04/nagy2015/large_instance_4",
+   "ok": true,
+   "detail": "reported 3963.0 vs independently recomputed 3963.0"
+  },
+  {
+   "id": "AC-01/nagy2015/large_instance_5",
+   "ok": true,
+   "detail": "exit 0 in 0.601s (limit 60s)"
+  },
+  {
+   "id": "AC-02/nagy2015/large_instance_5",
+   "ok": true,
+   "detail": "finished inside the limit (0.601s < 60s)"
+  },
+  {
+   "id": "AC-03/nagy2015/large_instance_5",
+   "ok": true,
+   "detail": "checker: feasible"
+  },
+  {
+   "id": "AC-04/nagy2015/large_instance_5",
+   "ok": true,
+   "detail": "reported 13711.0 vs independently recomputed 13711.0"
+  },
+  {
+   "id": "AC-01/nagy2015/tiny_instance",
+   "ok": true,
+   "detail": "exit 0 in 0.262s (limit 60s)"
+  },
+  {
+   "id": "AC-02/nagy2015/tiny_instance",
+   "ok": true,
+   "detail": "finished inside the limit (0.262s < 60s)"
+  },
+  {
+   "id": "AC-03/nagy2015/tiny_instance",
+   "ok": true,
+   "detail": "checker: feasible"
+  },
+  {
+   "id": "AC-04/nagy2015/tiny_instance",
+   "ok": true,
+   "detail": "reported 1142.0 vs independently recomputed 1142.0"
+  },
+  {
+   "id": "AC-05/nagy2015",
+   "ok": true,
+   "detail": "staged <slug>/solve.py present"
+  },
+  {
+   "id": "AC-06/nagy2015",
+   "ok": true,
+   "detail": "no network imports"
+  },
+  {
+   "id": "AC-07/archive",
+   "ok": true,
+   "detail": "submission archive 24 KiB <= 4096 KiB"
+  },
+  {
+   "id": "AC-08/manifest",
+   "ok": true,
+   "detail": "benchmark/instances.json lists every instance with a sha256 and a reference objective"
+  }
+ ],
+ "failed": []
+}

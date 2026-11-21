@@ -1,0 +1,251 @@
+{
+ "generated_by": "harness/verify.py",
+ "slugs": [
+  "hoffman1993"
+ ],
+ "time_limit_s": 60,
+ "tier": "all",
+ "problems": {
+  "hoffman1993": {
+   "instances": 6,
+   "feasible": 4,
+   "mean_score": 0.4205,
+   "max_wall_s": 55.073
+  }
+ },
+ "mean_score": 0.4205,
+ "rows": [
+  {
+   "slug": "hoffman1993",
+   "instance": "large_instance_1",
+   "tier": "large",
+   "run_status": "ok",
+   "wall_s": 54.948,
+   "reference_objective": 657.0,
+   "objective": 2117.0,
+   "score": 0.3103,
+   "feasible": true,
+   "violations": [],
+   "computed_objective": 2117.0,
+   "reported_objective": 2117.0
+  },
+  {
+   "slug": "hoffman1993",
+   "instance": "large_instance_2",
+   "tier": "large",
+   "run_status": "ok",
+   "wall_s": 1.447,
+   "reference_objective": 229.0,
+   "objective": 229.0,
+   "score": 1.0,
+   "feasible": true,
+   "violations": [],
+   "computed_objective": 229.0,
+   "reported_objective": 229.0
+  },
+  {
+   "slug": "hoffman1993",
+   "instance": "large_instance_3",
+   "tier": "large",
+   "run_status": "ok",
+   "wall_s": 54.306,
+   "reference_objective": 207.0,
+   "objective": 973.0,
+   "score": 0.2127,
+   "feasible": true,
+   "violations": [],
+   "computed_objective": 973.0,
+   "reported_objective": 973.0
+  },
+  {
+   "slug": "hoffman1993",
+   "instance": "large_instance_4",
+   "tier": "large",
+   "run_status": "ok",
+   "wall_s": 54.797,
+   "reference_objective": 331.0,
+   "objective": 0.0,
+   "score": 0.0,
+   "feasible": false,
+   "violations": [
+    "empty required decision witness field(s): selected_rotations"
+   ],
+   "computed_objective": 0.0,
+   "reported_objective": 0.0
+  },
+  {
+   "slug": "hoffman1993",
+   "instance": "large_instance_5",
+   "tier": "large",
+   "run_status": "ok",
+   "wall_s": 55.073,
+   "reference_objective": 180.0,
+   "objective": 0.0,
+   "score": 0.0,
+   "feasible": false,
+   "violations": [
+    "empty required decision witness field(s): selected_rotations"
+   ],
+   "computed_objective": 0.0,
+   "reported_objective": 0.0
+  },
+  {
+   "slug": "hoffman1993",
+   "instance": "tiny_instance",
+   "tier": "tiny",
+   "run_status": "ok",
+   "wall_s": 0.979,
+   "reference_objective": 16.0,
+   "objective": 16.0,
+   "score": 1.0,
+   "feasible": true,
+   "violations": [],
+   "computed_objective": 16.0,
+   "reported_objective": 16.0
+  }
+ ],
+ "checks": [
+  {
+   "id": "AC-01/hoffman1993/large_instance_1",
+   "ok": true,
+   "detail": "exit 0 in 54.948s (limit 60s)"
+  },
+  {
+   "id": "AC-02/hoffman1993/large_instance_1",
+   "ok": true,
+   "detail": "finished inside the limit (54.948s < 60s)"
+  },
+  {
+   "id": "AC-03/hoffman1993/large_instance_1",
+   "ok": true,
+   "detail": "checker: feasible"
+  },
+  {
+   "id": "AC-04/hoffman1993/large_instance_1",
+   "ok": true,
+   "detail": "reported 2117.0 vs independently recomputed 2117.0"
+  },
+  {
+   "id": "AC-01/hoffman1993/large_instance_2",
+   "ok": true,
+   "detail": "exit 0 in 1.447s (limit 60s)"
+  },
+  {
+   "id": "AC-02/hoffman1993/large_instance_2",
+   "ok": true,
+   "detail": "finished inside the limit (1.447s < 60s)"
+  },
+  {
+   "id": "AC-03/hoffman1993/large_instance_2",
+   "ok": true,
+   "detail": "checker: feasible"
+  },
+  {
+   "id": "AC-04/hoffman1993/large_instance_2",
+   "ok": true,
+   "detail": "reported 229.0 vs independently recomputed 229.0"
+  },
+  {
+   "id": "AC-01/hoffman1993/large_instance_3",
+   "ok": true,
+   "detail": "exit 0 in 54.306s (limit 60s)"
+  },
+  {
+   "id": "AC-02/hoffman1993/large_instance_3",
+   "ok": true,
+   "detail": "finished inside the limit (54.306s < 60s)"
+  },
+  {
+   "id": "AC-03/hoffman1993/large_instance_3",
+   "ok": true,
+   "detail": "checker: feasible"
+  },
+  {
+   "id": "AC-04/hoffman1993/large_instance_3",
+   "ok": true,
+   "detail": "reported 973.0 vs independently recomputed 973.0"
+  },
+  {
+   "id": "AC-01/hoffman1993/large_instance_4",
+   "ok": true,
+   "detail": "exit 0 in 54.797s (limit 60s)"
+  },
+  {
+   "id": "AC-02/hoffman1993/large_instance_4",
+   "ok": true,
+   "detail": "finished inside the limit (54.797s < 60s)"
+  },
+  {
+   "id": "AC-03/hoffman1993/large_instance_4",
+   "ok": false,
+   "detail": "checker rejected: empty required decision witness field(s): selected_rotations"
+  },
+  {
+   "id": "AC-01/hoffman1993/large_instance_5",
+   "ok": true,
+   "detail": "exit 0 in 55.073s (limit 60s)"
+  },
+  {
+   "id": "AC-02/hoffman1993/large_instance_5",
+   "ok": true,
+   "detail": "finished inside the limit (55.073s < 60s)"
+  },
+  {
+   "id": "AC-03/hoffman1993/large_instance_5",
+   "ok": false,
+   "detail": "checker rejected: empty required decision witness field(s): selected_rotations"
+  },
+  {
+   "id": "AC-01/hoffman1993/tiny_instance",
+   "ok": true,
+   "detail": "exit 0 in 0.979s (limit 60s)"
+  },
+  {
+   "id": "AC-02/hoffman1993/tiny_instance",
+   "ok": true,
+   "detail": "finished inside the limit (0.979s < 60s)"
+  },
+  {
+   "id": "AC-03/hoffman1993/tiny_instance",
+   "ok": true,
+   "detail": "checker: feasible"
+  },
+  {
+   "id": "AC-04/hoffman1993/tiny_instance",
+   "ok": true,
+   "detail": "reported 16.0 vs independently recomputed 16.0"
+  },
+  {
+   "id": "AC-05/hoffman1993",
+   "ok": true,
+   "detail": "staged <slug>/solve.py present"
+  },
+  {
+   "id": "AC-06/hoffman1993",
+   "ok": true,
+   "detail": "no network imports"
+  },
+  {
+   "id": "AC-07/archive",
+   "ok": true,
+   "detail": "submission archive 24 KiB <= 4096 KiB"
+  },
+  {
+   "id": "AC-08/manifest",
+   "ok": true,
+   "detail": "benchmark/instances.json lists every instance with a sha256 and a reference objective"
+  }
+ ],
+ "failed": [
+  {
+   "id": "AC-03/hoffman1993/large_instance_4",
+   "ok": false,
+   "detail": "checker rejected: empty required decision witness field(s): selected_rotations"
+  },
+  {
+   "id": "AC-03/hoffman1993/large_instance_5",
+   "ok": false,
+   "detail": "checker rejected: empty required decision witness field(s): selected_rotations"
+  }
+ ]
+}

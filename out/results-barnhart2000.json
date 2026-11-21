@@ -1,0 +1,246 @@
+{
+ "generated_by": "harness/verify.py",
+ "slugs": [
+  "barnhart2000"
+ ],
+ "time_limit_s": 60,
+ "tier": "all",
+ "problems": {
+  "barnhart2000": {
+   "instances": 6,
+   "feasible": 6,
+   "mean_score": 0.9398,
+   "max_wall_s": 9.813
+  }
+ },
+ "mean_score": 0.9398,
+ "rows": [
+  {
+   "slug": "barnhart2000",
+   "instance": "large_instance_1",
+   "tier": "large",
+   "run_status": "ok",
+   "wall_s": 7.344,
+   "reference_objective": 4951.0,
+   "objective": 5401.0,
+   "score": 0.9167,
+   "feasible": true,
+   "violations": [],
+   "computed_objective": 5401.0,
+   "reported_objective": 5401.0
+  },
+  {
+   "slug": "barnhart2000",
+   "instance": "large_instance_2",
+   "tier": "large",
+   "run_status": "ok",
+   "wall_s": 8.496,
+   "reference_objective": 4368.0,
+   "objective": 4796.0,
+   "score": 0.9108,
+   "feasible": true,
+   "violations": [],
+   "computed_objective": 4796.0,
+   "reported_objective": 4796.0
+  },
+  {
+   "slug": "barnhart2000",
+   "instance": "large_instance_3",
+   "tier": "large",
+   "run_status": "ok",
+   "wall_s": 9.813,
+   "reference_objective": 4771.0,
+   "objective": 5143.0,
+   "score": 0.9277,
+   "feasible": true,
+   "violations": [],
+   "computed_objective": 5143.0,
+   "reported_objective": 5143.0
+  },
+  {
+   "slug": "barnhart2000",
+   "instance": "large_instance_4",
+   "tier": "large",
+   "run_status": "ok",
+   "wall_s": 7.633,
+   "reference_objective": 5180.0,
+   "objective": 5402.0,
+   "score": 0.9589,
+   "feasible": true,
+   "violations": [],
+   "computed_objective": 5402.0,
+   "reported_objective": 5402.0
+  },
+  {
+   "slug": "barnhart2000",
+   "instance": "large_instance_5",
+   "tier": "large",
+   "run_status": "ok",
+   "wall_s": 7.143,
+   "reference_objective": 4761.0,
+   "objective": 5150.0,
+   "score": 0.9245,
+   "feasible": true,
+   "violations": [],
+   "computed_objective": 5150.0,
+   "reported_objective": 5150.0
+  },
+  {
+   "slug": "barnhart2000",
+   "instance": "tiny_instance",
+   "tier": "tiny",
+   "run_status": "ok",
+   "wall_s": 0.651,
+   "reference_objective": 64.0,
+   "objective": 64.0,
+   "score": 1.0,
+   "feasible": true,
+   "violations": [],
+   "computed_objective": 64.0,
+   "reported_objective": 64.0
+  }
+ ],
+ "checks": [
+  {
+   "id": "AC-01/barnhart2000/large_instance_1",
+   "ok": true,
+   "detail": "exit 0 in 7.344s (limit 60s)"
+  },
+  {
+   "id": "AC-02/barnhart2000/large_instance_1",
+   "ok": true,
+   "detail": "finished inside the limit (7.344s < 60s)"
+  },
+  {
+   "id": "AC-03/barnhart2000/large_instance_1",
+   "ok": true,
+   "detail": "checker: feasible"
+  },
+  {
+   "id": "AC-04/barnhart2000/large_instance_1",
+   "ok": true,
+   "detail": "reported 5401.0 vs independently recomputed 5401.0"
+  },
+  {
+   "id": "AC-01/barnhart2000/large_instance_2",
+   "ok": true,
+   "detail": "exit 0 in 8.496s (limit 60s)"
+  },
+  {
+   "id": "AC-02/barnhart2000/large_instance_2",
+   "ok": true,
+   "detail": "finished inside the limit (8.496s < 60s)"
+  },
+  {
+   "id": "AC-03/barnhart2000/large_instance_2",
+   "ok": true,
+   "detail": "checker: feasible"
+  },
+  {
+   "id": "AC-04/barnhart2000/large_instance_2",
+   "ok": true,
+   "detail": "reported 4796.0 vs independently recomputed 4796.0"
+  },
+  {
+   "id": "AC-01/barnhart2000/large_instance_3",
+   "ok": true,
+   "detail": "exit 0 in 9.813s (limit 60s)"
+  },
+  {
+   "id": "AC-02/barnhart2000/large_instance_3",
+   "ok": true,
+   "detail": "finished inside the limit (9.813s < 60s)"
+  },
+  {
+   "id": "AC-03/barnhart2000/large_instance_3",
+   "ok": true,
+   "detail": "checker: feasible"
+  },
+  {
+   "id": "AC-04/barnhart2000/large_instance_3",
+   "ok": true,
+   "detail": "reported 5143.0 vs independently recomputed 5143.0"
+  },
+  {
+   "id": "AC-01/barnhart2000/large_instance_4",
+   "ok": true,
+   "detail": "exit 0 in 7.633s (limit 60s)"
+  },
+  {
+   "id": "AC-02/barnhart2000/large_instance_4",
+   "ok": true,
+   "detail": "finished inside the limit (7.633s < 60s)"
+  },
+  {
+   "id": "AC-03/barnhart2000/large_instance_4",
+   "ok": true,
+   "detail": "checker: feasible"
+  },
+  {
+   "id": "AC-04/barnhart2000/large_instance_4",
+   "ok": true,
+   "detail": "reported 5402.0 vs independently recomputed 5402.0"
+  },
+  {
+   "id": "AC-01/barnhart2000/large_instance_5",
+   "ok": true,
+   "detail": "exit 0 in 7.143s (limit 60s)"
+  },
+  {
+   "id": "AC-02/barnhart2000/large_instance_5",
+   "ok": true,
+   "detail": "finished inside the limit (7.143s < 60s)"
+  },
+  {
+   "id": "AC-03/barnhart2000/large_instance_5",
+   "ok": true,
+   "detail": "checker: feasible"
+  },
+  {
+   "id": "AC-04/barnhart2000/large_instance_5",
+   "ok": true,
+   "detail": "reported 5150.0 vs independently recomputed 5150.0"
+  },
+  {
+   "id": "AC-01/barnhart2000/tiny_instance",
+   "ok": true,
+   "detail": "exit 0 in 0.651s (limit 60s)"
+  },
+  {
+   "id": "AC-02/barnhart2000/tiny_instance",
+   "ok": true,
+   "detail": "finished inside the limit (0.651s < 60s)"
+  },
+  {
+   "id": "AC-03/barnhart2000/tiny_instance",
+   "ok": true,
+   "detail": "checker: feasible"
+  },
+  {
+   "id": "AC-04/barnhart2000/tiny_instance",
+   "ok": true,
+   "detail": "reported 64.0 vs independently recomputed 64.0"
+  },
+  {
+   "id": "AC-05/barnhart2000",
+   "ok": true,
+   "detail": "staged <slug>/solve.py present"
+  },
+  {
+   "id": "AC-06/barnhart2000",
+   "ok": true,
+   "detail": "no network imports"
+  },
+  {
+   "id": "AC-07/archive",
+   "ok": true,
+   "detail": "submission archive 24 KiB <= 4096 KiB"
+  },
+  {
+   "id": "AC-08/manifest",
+   "ok": true,
+   "detail": "benchmark/instances.json lists every instance with a sha256 and a reference objective"
+  }
+ ],
+ "failed": []
+}

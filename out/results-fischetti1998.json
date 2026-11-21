@@ -1,0 +1,246 @@
+{
+ "generated_by": "harness/verify.py",
+ "slugs": [
+  "fischetti1998"
+ ],
+ "time_limit_s": 60,
+ "tier": "all",
+ "problems": {
+  "fischetti1998": {
+   "instances": 6,
+   "feasible": 6,
+   "mean_score": 1.1656,
+   "max_wall_s": 55.217
+  }
+ },
+ "mean_score": 1.1656,
+ "rows": [
+  {
+   "slug": "fischetti1998",
+   "instance": "large_instance_1",
+   "tier": "large",
+   "run_status": "ok",
+   "wall_s": 51.733,
+   "reference_objective": 17388.0,
+   "objective": 13925.0,
+   "score": 1.2487,
+   "feasible": true,
+   "violations": [],
+   "computed_objective": 13925.0,
+   "reported_objective": 13925.0
+  },
+  {
+   "slug": "fischetti1998",
+   "instance": "large_instance_2",
+   "tier": "large",
+   "run_status": "ok",
+   "wall_s": 14.94,
+   "reference_objective": 9528.0,
+   "objective": 7421.0,
+   "score": 1.2839,
+   "feasible": true,
+   "violations": [],
+   "computed_objective": 7421.0,
+   "reported_objective": 7421.0
+  },
+  {
+   "slug": "fischetti1998",
+   "instance": "large_instance_3",
+   "tier": "large",
+   "run_status": "ok",
+   "wall_s": 55.217,
+   "reference_objective": 20169.0,
+   "objective": 16524.0,
+   "score": 1.2206,
+   "feasible": true,
+   "violations": [],
+   "computed_objective": 16524.0,
+   "reported_objective": 16524.0
+  },
+  {
+   "slug": "fischetti1998",
+   "instance": "large_instance_4",
+   "tier": "large",
+   "run_status": "ok",
+   "wall_s": 55.208,
+   "reference_objective": 23368.0,
+   "objective": 20079.0,
+   "score": 1.1638,
+   "feasible": true,
+   "violations": [],
+   "computed_objective": 20079.0,
+   "reported_objective": 20079.0
+  },
+  {
+   "slug": "fischetti1998",
+   "instance": "large_instance_5",
+   "tier": "large",
+   "run_status": "ok",
+   "wall_s": 55.209,
+   "reference_objective": 25982.0,
+   "objective": 24131.0,
+   "score": 1.0767,
+   "feasible": true,
+   "violations": [],
+   "computed_objective": 24131.0,
+   "reported_objective": 24131.0
+  },
+  {
+   "slug": "fischetti1998",
+   "instance": "tiny_instance",
+   "tier": "tiny",
+   "run_status": "ok",
+   "wall_s": 0.173,
+   "reference_objective": 287.0,
+   "objective": 287.0,
+   "score": 1.0,
+   "feasible": true,
+   "violations": [],
+   "computed_objective": 287.0,
+   "reported_objective": 287.0
+  }
+ ],
+ "checks": [
+  {
+   "id": "AC-01/fischetti1998/large_instance_1",
+   "ok": true,
+   "detail": "exit 0 in 51.733s (limit 60s)"
+  },
+  {
+   "id": "AC-02/fischetti1998/large_instance_1",
+   "ok": true,
+   "detail": "finished inside the limit (51.733s < 60s)"
+  },
+  {
+   "id": "AC-03/fischetti1998/large_instance_1",
+   "ok": true,
+   "detail": "checker: feasible"
+  },
+  {
+   "id": "AC-04/fischetti1998/large_instance_1",
+   "ok": true,
+   "detail": "reported 13925.0 vs independently recomputed 13925.0"
+  },
+  {
+   "id": "AC-01/fischetti1998/large_instance_2",
+   "ok": true,
+   "detail": "exit 0 in 14.94s (limit 60s)"
+  },
+  {
+   "id": "AC-02/fischetti1998/large_instance_2",
+   "ok": true,
+   "detail": "finished inside the limit (14.94s < 60s)"
+  },
+  {
+   "id": "AC-03/fischetti1998/large_instance_2",
+   "ok": true,
+   "detail": "checker: feasible"
+  },
+  {
+   "id": "AC-04/fischetti1998/large_instance_2",
+   "ok": true,
+   "detail": "reported 7421.0 vs independently recomputed 7421.0"
+  },
+  {
+   "id": "AC-01/fischetti1998/large_instance_3",
+   "ok": true,
+   "detail": "exit 0 in 55.217s (limit 60s)"
+  },
+  {
+   "id": "AC-02/fischetti1998/large_instance_3",
+   "ok": true,
+   "detail": "finished inside the limit (55.217s < 60s)"
+  },
+  {
+   "id": "AC-03/fischetti1998/large_instance_3",
+   "ok": true,
+   "detail": "checker: feasible"
+  },
+  {
+   "id": "AC-04/fischetti1998/large_instance_3",
+   "ok": true,
+   "detail": "reported 16524.0 vs independently recomputed 16524.0"
+  },
+  {
+   "id": "AC-01/fischetti1998/large_instance_4",
+   "ok": true,
+   "detail": "exit 0 in 55.208s (limit 60s)"
+  },
+  {
+   "id": "AC-02/fischetti1998/large_instance_4",
+   "ok": true,
+   "detail": "finished inside the limit (55.208s < 60s)"
+  },
+  {
+   "id": "AC-03/fischetti1998/large_instance_4",
+   "ok": true,
+   "detail": "checker: feasible"
+  },
+  {
+   "id": "AC-04/fischetti1998/large_instance_4",
+   "ok": true,
+   "detail": "reported 20079.0 vs independently recomputed 20079.0"
+  },
+  {
+   "id": "AC-01/fischetti1998/large_instance_5",
+   "ok": true,
+   "detail": "exit 0 in 55.209s (limit 60s)"
+  },
+  {
+   "id": "AC-02/fischetti1998/large_instance_5",
+   "ok": true,
+   "detail": "finished inside the limit (55.209s < 60s)"
+  },
+  {
+   "id": "AC-03/fischetti1998/large_instance_5",
+   "ok": true,
+   "detail": "checker: feasible"
+  },
+  {
+   "id": "AC-04/fischetti1998/large_instance_5",
+   "ok": true,
+   "detail": "reported 24131.0 vs independently recomputed 24131.0"
+  },
+  {
+   "id": "AC-01/fischetti1998/tiny_instance",
+   "ok": true,
+   "detail": "exit 0 in 0.173s (limit 60s)"
+  },
+  {
+   "id": "AC-02/fischetti1998/tiny_instance",
+   "ok": true,
+   "detail": "finished inside the limit (0.173s < 60s)"
+  },
+  {
+   "id": "AC-03/fischetti1998/tiny_instance",
+   "ok": true,
+   "detail": "checker: feasible"
+  },
+  {
+   "id": "AC-04/fischetti1998/tiny_instance",
+   "ok": true,
+   "detail": "reported 287.0 vs independently recomputed 287.0"
+  },
+  {
+   "id": "AC-05/fischetti1998",
+   "ok": true,
+   "detail": "staged <slug>/solve.py present"
+  },
+  {
+   "id": "AC-06/fischetti1998",
+   "ok": true,
+   "detail": "no network imports"
+  },
+  {
+   "id": "AC-07/archive",
+   "ok": true,
+   "detail": "submission archive 24 KiB <= 4096 KiB"
+  },
+  {
+   "id": "AC-08/manifest",
+   "ok": true,
+   "detail": "benchmark/instances.json lists every instance with a sha256 and a reference objective"
+  }
+ ],
+ "failed": []
+}
