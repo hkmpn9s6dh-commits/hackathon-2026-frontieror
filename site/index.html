@@ -57,6 +57,8 @@
   .mini dt { font-size: 13px; color: var(--muted); }
   .how { font-size: 14px; color: var(--muted); max-width: 46em; }
   .mini dd { margin: 0; font-size: 15px; font-variant-numeric: tabular-nums; }
+  .mini .strip { margin-left: auto; }
+  .mini .strip dd { font-size: 13px; color: var(--muted); }
   .note { background: #fbf8ef; border-left: 3px solid #c8a35a; padding: 16px 20px; margin: 24px 0; font-size: 15px; }
   ul { margin: 0 0 16px; padding-left: 22px; }
   li { margin-bottom: 8px; }
@@ -83,7 +85,7 @@
   <section class="hero">
     <div class="ruler">
       <svg viewBox="0 0 666 222" role="img" aria-label="每題平均分（0 到 1.2，1.0 是參考），右列是最慢一次的牆鐘"><line x1="500.0" y1="12" x2="500.0" y2="192" stroke="#3a3730" stroke-width="1.5" stroke-dasharray="4 4"/><line x1="150" y1="12" x2="150" y2="192" stroke="#d8d2c4" stroke-width="1"/><text x="138" y="34" text-anchor="end" font-size="15" fill="#16150f">DARP</text><rect x="150" y="20" width="420" height="18" fill="#eae5d8" rx="3"/><rect x="150" y="20" width="337.5" height="18" fill="#3a3730" rx="3"/><text x="582" y="34" font-size="13" fill="#16150f">0.96</text><text x="620" y="34" font-size="12" fill="#6b6659">43s</text><text x="138" y="62" text-anchor="end" font-size="15" fill="#16150f">OP</text><rect x="150" y="48" width="420" height="18" fill="#eae5d8" rx="3"/><rect x="150" y="48" width="302.6" height="18" fill="#3a3730" rx="3"/><text x="582" y="62" font-size="13" fill="#16150f">0.86</text><text x="620" y="62" font-size="12" fill="#3a3730" font-weight="600">55s*</text><text x="138" y="90" text-anchor="end" font-size="15" fill="#16150f">ODIMCF</text><rect x="150" y="76" width="420" height="18" fill="#eae5d8" rx="3"/><rect x="150" y="76" width="328.9" height="18" fill="#3a3730" rx="3"/><text x="582" y="90" font-size="13" fill="#16150f">0.94</text><text x="620" y="90" font-size="12" fill="#6b6659">10s</text><text x="138" y="118" text-anchor="end" font-size="15" fill="#16150f">SPP</text><rect x="150" y="104" width="420" height="18" fill="#eae5d8" rx="3"/><rect x="150" y="104" width="147.2" height="18" fill="#b3271e" rx="3"/><text x="582" y="118" font-size="13" fill="#16150f">0.42</text><text x="620" y="118" font-size="12" fill="#3a3730" font-weight="600">55s*</text><text x="138" y="146" text-anchor="end" font-size="15" fill="#16150f">SCFLP</text><rect x="150" y="132" width="420" height="18" fill="#eae5d8" rx="3"/><rect x="150" y="132" width="320.4" height="18" fill="#3a3730" rx="3"/><text x="582" y="146" font-size="13" fill="#16150f">0.92</text><text x="620" y="146" font-size="12" fill="#6b6659">16s</text><text x="138" y="174" text-anchor="end" font-size="15" fill="#16150f">VRPDDP</text><rect x="150" y="160" width="420" height="18" fill="#eae5d8" rx="3"/><rect x="150" y="160" width="329.6" height="18" fill="#3a3730" rx="3"/><text x="582" y="174" font-size="13" fill="#16150f">0.94</text><text x="620" y="174" font-size="12" fill="#6b6659">4s</text><text x="582" y="12" font-size="11" fill="#6b6659">平均分</text><text x="620" y="12" font-size="11" fill="#6b6659">最慢</text><text x="500.0" y="210" text-anchor="middle" font-size="12" fill="#3a3730">1.0 參考</text><text x="570" y="210" text-anchor="end" font-size="11" fill="#6b6659">1.2</text></svg>
-      <p class="cap">橫條＝那一題的平均分，虛線是 1.0（與參考相同）。右列是最慢一次的牆鐘，打 * 的表示撞到我們自設的 55 秒軟停止（留 5 秒寫答案）。紅條＝這一題有實例沒解出來。</p>
+      <p class="cap">橫條＝那一題的平均分，虛線是 1.0（與參考相同）。右列是最慢一次的牆鐘；打 * 的表示用滿了預算（我們在 60 秒前 5–7 秒停手寫答案，所以會落在 53–55 秒上下）。紅條＝這一題有實例沒解出來。</p>
     </div>
     <div class="statline">
       <p class="stat">0.841<span class="tag">估算</span>
@@ -121,6 +123,7 @@
         <dl class="mini">
           <div><dt>平均分</dt><dd class="num">0.964</dd></div>
           <div><dt>最慢一次</dt><dd class="num">42.8s</dd></div>
+          <div class="strip"><dt>各實例</dt><dd class="mono">0.96 0.96 0.95 0.96 0.95 0.99</dd></div>
         </dl>
       </article>
       <article class="card">
@@ -134,6 +137,7 @@
         <dl class="mini">
           <div><dt>平均分</dt><dd class="num">0.865</dd></div>
           <div><dt>最慢一次</dt><dd class="num">55.2s</dd></div>
+          <div class="strip"><dt>各實例</dt><dd class="mono">0.80 0.78 0.82 0.86 0.93 1.00</dd></div>
         </dl>
       </article>
       <article class="card">
@@ -147,6 +151,7 @@
         <dl class="mini">
           <div><dt>平均分</dt><dd class="num">0.940</dd></div>
           <div><dt>最慢一次</dt><dd class="num">9.8s</dd></div>
+          <div class="strip"><dt>各實例</dt><dd class="mono">0.92 0.91 0.93 0.96 0.92 1.00</dd></div>
         </dl>
       </article>
       <article class="card">
@@ -160,6 +165,7 @@
         <dl class="mini">
           <div><dt>平均分</dt><dd class="num">0.420</dd></div>
           <div><dt>最慢一次</dt><dd class="num">55.1s</dd></div>
+          <div class="strip"><dt>各實例</dt><dd class="mono">0.31 1.00 0.21 0.00 0.00 1.00</dd></div>
         </dl>
       </article>
       <article class="card">
@@ -173,6 +179,7 @@
         <dl class="mini">
           <div><dt>平均分</dt><dd class="num">0.915</dd></div>
           <div><dt>最慢一次</dt><dd class="num">15.8s</dd></div>
+          <div class="strip"><dt>各實例</dt><dd class="mono">0.89 0.88 0.90 0.99 0.98 0.85</dd></div>
         </dl>
       </article>
       <article class="card">
@@ -186,18 +193,25 @@
         <dl class="mini">
           <div><dt>平均分</dt><dd class="num">0.942</dd></div>
           <div><dt>最慢一次</dt><dd class="num">3.7s</dd></div>
+          <div class="strip"><dt>各實例</dt><dd class="mono">1.02 0.92 1.01 0.86 1.00 0.83</dd></div>
         </dl>
       </article>
   </div>
 
   <h2>撞牆的那一題</h2>
-  <p>集合劃分（<code>hoffman1993</code>）是唯一沒有全部拿下來的題。原因不是「不夠快」，
-     而是<b>成本與長度無關</b>：15,000 個候選輪轉的成本在 1–200 之間，覆蓋的航班段數在 1–51 之間，
-     所以最優解是「很多很短的輪轉」。分支定界從第一個可行解（約 33 根長輪轉）往下走，
-     每一步都要拆掉一根長的換幾根短的，60 秒內走不到。</p>
-  <p>最密的兩個實例（平均覆蓋 21.6 段、需要約 5 根輪轉）連<b>可行覆蓋</b>都找不到：
-     100 段航班要剛好被 5 個集合切開，在 15,000 個候選裡是一個針尖。純可行性模型跑 15 秒也還是
-     <code>UNKNOWN</code>。這是這條生產線目前真正的邊界，不是調參能解決的。</p>
+  <p>集合劃分（<code>hoffman1993</code>）是唯一沒有全部拿下來的題。它其實是<b>兩種不同的難</b>，
+     分開看才說得通。</p>
+  <p><b>稀疏的那三個實例</b>（每個候選平均覆蓋 12.5 段）：成本 1–200 與長度<b>無關</b>，
+     所以最省錢的湊法偏向「很多很短的輪轉」。表裡那一輪交出來是 <b>2,117 / 27 根</b>，
+     另跑一次（<code>docs/logs/hoffman-large_instance_1.log</code>）是 <b>2,081 / 29 根</b>——
+     同一台機器兩次的差別來自 CP-SAT 的隨機種子。參考值 657（約 8 根），差 3 倍，
+     不是差幾個百分點。</p>
+  <p><b>稠密的兩個實例</b>（每個候選平均覆蓋 21.6 段）：100 段航班要剛好被約 5 個集合切開，
+     在 15,000 個候選裡是一個針尖。這兩個連<b>可行覆蓋</b>都找不到，
+     所以交出去的是空清單——是「沒解出來」，不是輸出格式壞了。</p>
+  <p>這兩件事同源：<b>成本與規模脫鉤時，CP-SAT 的搜索會沿著第一個可行解的形狀往下走，而那通常不是最優解的形狀。</b>
+     要改就得換搜索（例如先把「剛好覆蓋」鬆成允許重疊再修復，或給 CP-SAT 一個「短輪轉優先」的決策策略），
+     不是調時間。</p>
   <p>沒有拿下來的實例：</p>
   <ul><li><code>hoffman1993</code> / <code>large_instance_4</code>：60 秒內沒有找到覆蓋，solver 寫出空清單，檢查器因此判「缺少必要欄位」——是<b>沒解出來</b>，不是輸出格式壞了。</li><li><code>hoffman1993</code> / <code>large_instance_5</code>：60 秒內沒有找到覆蓋，solver 寫出空清單，檢查器因此判「缺少必要欄位」——是<b>沒解出來</b>，不是輸出格式壞了。</li></ul>
 

@@ -66,8 +66,9 @@ PROSE = {
     "conclusion": "36 個實例裡 34 個拿到可行解；集合劃分有 2 個實例在 60 秒內找不到覆蓋。",
     "lede": "六個沒見過的運籌題，同一條生產線：讀 schema、選構造、自己判可行、自己決定什麼時候停。"
             "判分用官方檢查器。",
-    "ruler_note": "橫條＝那一題的平均分，虛線是 1.0（與參考相同）。右列是最慢一次的牆鐘，"
-                  "打 * 的表示撞到我們自設的 55 秒軟停止（留 5 秒寫答案）。紅條＝這一題有實例沒解出來。",
+    "ruler_note": "橫條＝那一題的平均分，虛線是 1.0（與參考相同）。右列是最慢一次的牆鐘；"
+                  "打 * 的表示用滿了預算（我們在 60 秒前 5–7 秒停手寫答案，所以會落在 53–55 秒上下）。"
+                  "紅條＝這一題有實例沒解出來。",
     "score_note": "分數照官方評分頁算：最小化題是「參考 ÷ 我們」，最大化題（本場的定向越野）反過來；"
                   "與參考相同得 1.000，比參考好最多到 2.000。這裡的參考值是<b>基準資料集</b>裡的 Gurobi 目標，"
                   "不是比賽後台凍結的參考值，所以它是估計，不是成績。",
@@ -169,6 +170,7 @@ def build() -> str:
         info = PROBLEMS[slug]
         ok = p["feasible"] == p["instances"]
         badge = "全部可行" if ok else f'{p["feasible"]}/{p["instances"]} 可行'
+        strip = " ".join(f'{r["score"]:.2f}' for r in sorted([x for x in rows if x["slug"] == slug], key=lambda r: r["instance"]))
         cards.append(f"""
       <article class="card">
         <div class="card-head">
@@ -181,6 +183,7 @@ def build() -> str:
         <dl class="mini">
           <div><dt>平均分</dt><dd class="num">{p["mean_score"]:.3f}</dd></div>
           <div><dt>最慢一次</dt><dd class="num">{p["max_wall_s"]:.1f}s</dd></div>
+          <div class="strip"><dt>各實例</dt><dd class="mono">{strip}</dd></div>
         </dl>
       </article>""")
 
@@ -250,6 +253,8 @@ def build() -> str:
   .mini dt {{ font-size: 13px; color: var(--muted); }}
   .how {{ font-size: 14px; color: var(--muted); max-width: 46em; }}
   .mini dd {{ margin: 0; font-size: 15px; font-variant-numeric: tabular-nums; }}
+  .mini .strip {{ margin-left: auto; }}
+  .mini .strip dd {{ font-size: 13px; color: var(--muted); }}
   .note {{ background: #fbf8ef; border-left: 3px solid #c8a35a; padding: 16px 20px; margin: 24px 0; font-size: 15px; }}
   ul {{ margin: 0 0 16px; padding-left: 22px; }}
   li {{ margin-bottom: 8px; }}
@@ -306,13 +311,19 @@ def build() -> str:
   </div>
 
   <h2>撞牆的那一題</h2>
-  <p>集合劃分（<code>hoffman1993</code>）是唯一沒有全部拿下來的題。原因不是「不夠快」，
-     而是<b>成本與長度無關</b>：15,000 個候選輪轉的成本在 1–200 之間，覆蓋的航班段數在 1–51 之間，
-     所以最優解是「很多很短的輪轉」。分支定界從第一個可行解（約 33 根長輪轉）往下走，
-     每一步都要拆掉一根長的換幾根短的，60 秒內走不到。</p>
-  <p>最密的兩個實例（平均覆蓋 21.6 段、需要約 5 根輪轉）連<b>可行覆蓋</b>都找不到：
-     100 段航班要剛好被 5 個集合切開，在 15,000 個候選裡是一個針尖。純可行性模型跑 15 秒也還是
-     <code>UNKNOWN</code>。這是這條生產線目前真正的邊界，不是調參能解決的。</p>
+  <p>集合劃分（<code>hoffman1993</code>）是唯一沒有全部拿下來的題。它其實是<b>兩種不同的難</b>，
+     分開看才說得通。</p>
+  <p><b>稀疏的那三個實例</b>（每個候選平均覆蓋 12.5 段）：成本 1–200 與長度<b>無關</b>，
+     所以最省錢的湊法偏向「很多很短的輪轉」。表裡那一輪交出來是 <b>2,117 / 27 根</b>，
+     另跑一次（<code>docs/logs/hoffman-large_instance_1.log</code>）是 <b>2,081 / 29 根</b>——
+     同一台機器兩次的差別來自 CP-SAT 的隨機種子。參考值 657（約 8 根），差 3 倍，
+     不是差幾個百分點。</p>
+  <p><b>稠密的兩個實例</b>（每個候選平均覆蓋 21.6 段）：100 段航班要剛好被約 5 個集合切開，
+     在 15,000 個候選裡是一個針尖。這兩個連<b>可行覆蓋</b>都找不到，
+     所以交出去的是空清單——是「沒解出來」，不是輸出格式壞了。</p>
+  <p>這兩件事同源：<b>成本與規模脫鉤時，CP-SAT 的搜索會沿著第一個可行解的形狀往下走，而那通常不是最優解的形狀。</b>
+     要改就得換搜索（例如先把「剛好覆蓋」鬆成允許重疊再修復，或給 CP-SAT 一個「短輪轉優先」的決策策略），
+     不是調時間。</p>
   <p>沒有拿下來的實例：</p>
   <ul>{failed_lines}</ul>
 
